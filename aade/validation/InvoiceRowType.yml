@@ -1,0 +1,233 @@
+Sofar\Aade\InvoiceRowType:
+    properties:
+        lineNumber:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        recType:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '7'
+                    groups:
+                        - xsd_rules
+        itemDescr:
+            -
+                Length:
+                    max: '300'
+                    groups:
+                        - xsd_rules
+        fuelCode:
+            -
+                Choice:
+                    choices:
+                        - '10'
+                        - '11'
+                        - '12'
+                        - '13'
+                        - '14'
+                        - '15'
+                        - '20'
+                        - '21'
+                        - '30'
+                        - '31'
+                        - '32'
+                        - '33'
+                        - '34'
+                        - '35'
+                        - '36'
+                        - '37'
+                        - '38'
+                        - '40'
+                        - '41'
+                        - '42'
+                        - '43'
+                        - '44'
+                        - '50'
+                        - '60'
+                        - '61'
+                        - '70'
+                        - '71'
+                        - '72'
+                        - '999'
+                    groups:
+                        - xsd_rules
+        quantity:
+            -
+                GreaterThan:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        measurementUnit:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '3'
+                    groups:
+                        - xsd_rules
+        invoiceDetailType:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '2'
+                    groups:
+                        - xsd_rules
+        netValue:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        vatCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '8'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        vatAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        vatExemptionCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '31'
+                    groups:
+                        - xsd_rules
+        dienergia:
+            -
+                Valid: null
+        withheldAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        withheldPercentCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '18'
+                    groups:
+                        - xsd_rules
+        stampDutyAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        stampDutyPercentCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '4'
+                    groups:
+                        - xsd_rules
+        feesAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        feesPercentCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '22'
+                    groups:
+                        - xsd_rules
+        otherTaxesPercentCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '19'
+                    groups:
+                        - xsd_rules
+        otherTaxesAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        deductionsAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        lineComments:
+            -
+                Length:
+                    max: '150'
+                    groups:
+                        - xsd_rules
+        incomeClassification:
+            -
+                Valid: null
+        expensesClassification:
+            -
+                Valid: null
+        quantity15:
+            -
+                GreaterThan:
+                    value: '0'
+                    groups:
+                        - xsd_rules

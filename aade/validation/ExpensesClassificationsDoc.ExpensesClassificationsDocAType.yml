@@ -1,0 +1,9 @@
+Sofar\Aade\ExpensesClassificationsDoc\ExpensesClassificationsDocAType:
+    properties:
+        expensesInvoiceClassification:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

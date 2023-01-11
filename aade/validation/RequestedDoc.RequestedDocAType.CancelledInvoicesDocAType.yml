@@ -1,0 +1,5 @@
+Sofar\Aade\RequestedDoc\RequestedDocAType\CancelledInvoicesDocAType:
+    properties:
+        cancelledInvoice:
+            -
+                Valid: null

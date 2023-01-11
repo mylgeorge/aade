@@ -1,0 +1,34 @@
+Sofar\Aade\InvoiceProviderType:
+    properties:
+        issuerVAT:
+            expose: true
+            access_type: public_method
+            serialized_name: issuerVAT
+            accessor:
+                getter: getIssuerVAT
+                setter: setIssuerVAT
+            type: string
+        invoiceProviderMark:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceProviderMark
+            accessor:
+                getter: getInvoiceProviderMark
+                setter: setInvoiceProviderMark
+            type: int
+        invoiceUid:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceUid
+            accessor:
+                getter: getInvoiceUid
+                setter: setInvoiceUid
+            type: string
+        authenticationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: authenticationCode
+            accessor:
+                getter: getAuthenticationCode
+                setter: setAuthenticationCode
+            type: string

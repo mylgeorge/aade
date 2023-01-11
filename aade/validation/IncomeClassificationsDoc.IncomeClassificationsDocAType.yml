@@ -1,0 +1,9 @@
+Sofar\Aade\IncomeClassificationsDoc\IncomeClassificationsDocAType:
+    properties:
+        incomeInvoiceClassification:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

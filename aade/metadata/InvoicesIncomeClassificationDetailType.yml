@@ -1,0 +1,26 @@
+Sofar\Aade\InvoicesIncomeClassificationDetailType:
+    properties:
+        lineNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: lineNumber
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+            accessor:
+                getter: getLineNumber
+                setter: setLineNumber
+            type: int
+        incomeClassificationDetailData:
+            expose: true
+            access_type: public_method
+            serialized_name: incomeClassificationDetailData
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+            accessor:
+                getter: getIncomeClassificationDetailData
+                setter: setIncomeClassificationDetailData
+            xml_list:
+                inline: true
+                entry_name: incomeClassificationDetailData
+                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+            type: array<Sofar\Aade\IncomeClassificationType>

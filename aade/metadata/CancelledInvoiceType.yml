@@ -1,0 +1,32 @@
+Sofar\Aade\CancelledInvoiceType:
+    properties:
+        invoiceMark:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceMark
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoiceMark
+                setter: setInvoiceMark
+            type: int
+        cancellationMark:
+            expose: true
+            access_type: public_method
+            serialized_name: cancellationMark
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCancellationMark
+                setter: setCancellationMark
+            type: int
+        cancellationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: cancellationDate
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCancellationDate
+                setter: setCancellationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date

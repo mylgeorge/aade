@@ -1,0 +1,9 @@
+Sofar\Aade\ResponseDoc\ResponseDocAType:
+    properties:
+        response:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

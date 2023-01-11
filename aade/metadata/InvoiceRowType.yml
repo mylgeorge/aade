@@ -1,0 +1,270 @@
+Sofar\Aade\InvoiceRowType:
+    properties:
+        lineNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: lineNumber
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getLineNumber
+                setter: setLineNumber
+            type: int
+        recType:
+            expose: true
+            access_type: public_method
+            serialized_name: recType
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getRecType
+                setter: setRecType
+            type: int
+        itemDescr:
+            expose: true
+            access_type: public_method
+            serialized_name: itemDescr
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getItemDescr
+                setter: setItemDescr
+            type: string
+        fuelCode:
+            expose: true
+            access_type: public_method
+            serialized_name: fuelCode
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getFuelCode
+                setter: setFuelCode
+            type: string
+        quantity:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getQuantity
+                setter: setQuantity
+            type: float
+        measurementUnit:
+            expose: true
+            access_type: public_method
+            serialized_name: measurementUnit
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getMeasurementUnit
+                setter: setMeasurementUnit
+            type: int
+        invoiceDetailType:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceDetailType
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoiceDetailType
+                setter: setInvoiceDetailType
+            type: int
+        netValue:
+            expose: true
+            access_type: public_method
+            serialized_name: netValue
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getNetValue
+                setter: setNetValue
+            type: float
+        vatCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: vatCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatCategory
+                setter: setVatCategory
+            type: int
+        vatAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: vatAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatAmount
+                setter: setVatAmount
+            type: float
+        vatExemptionCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: vatExemptionCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatExemptionCategory
+                setter: setVatExemptionCategory
+            type: int
+        dienergia:
+            expose: true
+            access_type: public_method
+            serialized_name: dienergia
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDienergia
+                setter: setDienergia
+            type: Sofar\Aade\ShipType
+        discountOption:
+            expose: true
+            access_type: public_method
+            serialized_name: discountOption
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDiscountOption
+                setter: setDiscountOption
+            type: bool
+        withheldAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: withheldAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getWithheldAmount
+                setter: setWithheldAmount
+            type: float
+        withheldPercentCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: withheldPercentCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getWithheldPercentCategory
+                setter: setWithheldPercentCategory
+            type: int
+        stampDutyAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: stampDutyAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getStampDutyAmount
+                setter: setStampDutyAmount
+            type: float
+        stampDutyPercentCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: stampDutyPercentCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getStampDutyPercentCategory
+                setter: setStampDutyPercentCategory
+            type: int
+        feesAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: feesAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getFeesAmount
+                setter: setFeesAmount
+            type: float
+        feesPercentCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: feesPercentCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getFeesPercentCategory
+                setter: setFeesPercentCategory
+            type: int
+        otherTaxesPercentCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: otherTaxesPercentCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getOtherTaxesPercentCategory
+                setter: setOtherTaxesPercentCategory
+            type: int
+        otherTaxesAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: otherTaxesAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getOtherTaxesAmount
+                setter: setOtherTaxesAmount
+            type: float
+        deductionsAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: deductionsAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDeductionsAmount
+                setter: setDeductionsAmount
+            type: float
+        lineComments:
+            expose: true
+            access_type: public_method
+            serialized_name: lineComments
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getLineComments
+                setter: setLineComments
+            type: string
+        incomeClassification:
+            expose: true
+            access_type: public_method
+            serialized_name: incomeClassification
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIncomeClassification
+                setter: setIncomeClassification
+            xml_list:
+                inline: true
+                entry_name: incomeClassification
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\IncomeClassificationType>
+        expensesClassification:
+            expose: true
+            access_type: public_method
+            serialized_name: expensesClassification
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getExpensesClassification
+                setter: setExpensesClassification
+            xml_list:
+                inline: true
+                entry_name: expensesClassification
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\ExpensesClassificationType>
+        quantity15:
+            expose: true
+            access_type: public_method
+            serialized_name: quantity15
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getQuantity15
+                setter: setQuantity15
+            type: float

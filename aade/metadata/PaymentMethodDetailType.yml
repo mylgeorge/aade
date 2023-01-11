@@ -1,0 +1,32 @@
+Sofar\Aade\PaymentMethodDetailType:
+    properties:
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: type
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getType
+                setter: setType
+            type: int
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: float
+        paymentMethodInfo:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentMethodInfo
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getPaymentMethodInfo
+                setter: setPaymentMethodInfo
+            type: string

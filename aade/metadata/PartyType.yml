@@ -1,0 +1,72 @@
+Sofar\Aade\PartyType:
+    properties:
+        vatNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: vatNumber
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatNumber
+                setter: setVatNumber
+            type: string
+        country:
+            expose: true
+            access_type: public_method
+            serialized_name: country
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCountry
+                setter: setCountry
+            type: string
+        branch:
+            expose: true
+            access_type: public_method
+            serialized_name: branch
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getBranch
+                setter: setBranch
+            type: int
+        name:
+            expose: true
+            access_type: public_method
+            serialized_name: name
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getName
+                setter: setName
+            type: string
+        address:
+            expose: true
+            access_type: public_method
+            serialized_name: address
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getAddress
+                setter: setAddress
+            type: Sofar\Aade\AddressType
+        documentIdNo:
+            expose: true
+            access_type: public_method
+            serialized_name: documentIdNo
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDocumentIdNo
+                setter: setDocumentIdNo
+            type: string
+        supplyAccountNo:
+            expose: true
+            access_type: public_method
+            serialized_name: supplyAccountNo
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getSupplyAccountNo
+                setter: setSupplyAccountNo
+            type: string

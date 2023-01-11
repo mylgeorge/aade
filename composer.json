@@ -1,0 +1,37 @@
+{
+    "name": "mylgeorge/aade",
+    "description": "AADE MyData into PHP classes and JMS metadata",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "George Mylonas",
+            "email": "mylgeorge@gmail.com"
+        }
+    ],
+    "require": {
+        "goetas-webservices/xsd2php-runtime": "^0.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "symfony/validator": "^6.0"
+    },
+    "require-dev": {
+        "goetas-webservices/xsd2php": "^0.4",
+        "phpunit/phpunit": "^9.5",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sofar\\Aade\\": [ "aade/src/", "src/" ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "xsd2php": "xsd2php convert config.yml ./xsd/*.xsd"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

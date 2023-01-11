@@ -1,0 +1,110 @@
+Sofar\Aade\InvoiceSummaryType:
+    properties:
+        totalNetValue:
+            expose: true
+            access_type: public_method
+            serialized_name: totalNetValue
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalNetValue
+                setter: setTotalNetValue
+            type: float
+        totalVatAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: totalVatAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalVatAmount
+                setter: setTotalVatAmount
+            type: float
+        totalWithheldAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: totalWithheldAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalWithheldAmount
+                setter: setTotalWithheldAmount
+            type: float
+        totalFeesAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: totalFeesAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalFeesAmount
+                setter: setTotalFeesAmount
+            type: float
+        totalStampDutyAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: totalStampDutyAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalStampDutyAmount
+                setter: setTotalStampDutyAmount
+            type: float
+        totalOtherTaxesAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: totalOtherTaxesAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalOtherTaxesAmount
+                setter: setTotalOtherTaxesAmount
+            type: float
+        totalDeductionsAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: totalDeductionsAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalDeductionsAmount
+                setter: setTotalDeductionsAmount
+            type: float
+        totalGrossValue:
+            expose: true
+            access_type: public_method
+            serialized_name: totalGrossValue
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalGrossValue
+                setter: setTotalGrossValue
+            type: float
+        incomeClassification:
+            expose: true
+            access_type: public_method
+            serialized_name: incomeClassification
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIncomeClassification
+                setter: setIncomeClassification
+            xml_list:
+                inline: true
+                entry_name: incomeClassification
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\IncomeClassificationType>
+        expensesClassification:
+            expose: true
+            access_type: public_method
+            serialized_name: expensesClassification
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getExpensesClassification
+                setter: setExpensesClassification
+            xml_list:
+                inline: true
+                entry_name: expensesClassification
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\ExpensesClassificationType>

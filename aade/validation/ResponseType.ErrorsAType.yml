@@ -1,0 +1,5 @@
+Sofar\Aade\ResponseType\ErrorsAType:
+    properties:
+        error:
+            -
+                Valid: null

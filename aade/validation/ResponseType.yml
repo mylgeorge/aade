@@ -1,0 +1,70 @@
+Sofar\Aade\ResponseType:
+    properties:
+        index:
+            -
+                GreaterThanOrEqual:
+                    value: '-2147483648'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '2147483647'
+                    groups:
+                        - xsd_rules
+        invoiceMark:
+            -
+                GreaterThanOrEqual:
+                    value: '-9223372036854775808'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+        classificationMark:
+            -
+                GreaterThanOrEqual:
+                    value: '-9223372036854775808'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+        cancellationMark:
+            -
+                GreaterThanOrEqual:
+                    value: '-9223372036854775808'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+        receptionProviders:
+            -
+                Count:
+                    max: 2
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        receptionEmails:
+            -
+                Count:
+                    max: 2
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        errors:
+            -
+                Valid: null
+        statusCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

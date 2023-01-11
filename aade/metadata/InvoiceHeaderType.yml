@@ -1,0 +1,166 @@
+Sofar\Aade\InvoiceHeaderType:
+    properties:
+        series:
+            expose: true
+            access_type: public_method
+            serialized_name: series
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getSeries
+                setter: setSeries
+            type: string
+        aa:
+            expose: true
+            access_type: public_method
+            serialized_name: aa
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getAa
+                setter: setAa
+            type: string
+        issueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: issueDate
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIssueDate
+                setter: setIssueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        invoiceType:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceType
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoiceType
+                setter: setInvoiceType
+            type: string
+        vatPaymentSuspension:
+            expose: true
+            access_type: public_method
+            serialized_name: vatPaymentSuspension
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatPaymentSuspension
+                setter: setVatPaymentSuspension
+            type: bool
+        currency:
+            expose: true
+            access_type: public_method
+            serialized_name: currency
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCurrency
+                setter: setCurrency
+            type: string
+        exchangeRate:
+            expose: true
+            access_type: public_method
+            serialized_name: exchangeRate
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getExchangeRate
+                setter: setExchangeRate
+            type: float
+        correlatedInvoices:
+            expose: true
+            access_type: public_method
+            serialized_name: correlatedInvoices
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCorrelatedInvoices
+                setter: setCorrelatedInvoices
+            xml_list:
+                inline: true
+                entry_name: correlatedInvoices
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<int>
+        selfPricing:
+            expose: true
+            access_type: public_method
+            serialized_name: selfPricing
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getSelfPricing
+                setter: setSelfPricing
+            type: bool
+        dispatchDate:
+            expose: true
+            access_type: public_method
+            serialized_name: dispatchDate
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDispatchDate
+                setter: setDispatchDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        dispatchTime:
+            expose: true
+            access_type: public_method
+            serialized_name: dispatchTime
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDispatchTime
+                setter: setDispatchTime
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time
+        vehicleNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: vehicleNumber
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVehicleNumber
+                setter: setVehicleNumber
+            type: string
+        movePurpose:
+            expose: true
+            access_type: public_method
+            serialized_name: movePurpose
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getMovePurpose
+                setter: setMovePurpose
+            type: int
+        fuelInvoice:
+            expose: true
+            access_type: public_method
+            serialized_name: fuelInvoice
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getFuelInvoice
+                setter: setFuelInvoice
+            type: bool
+        specialInvoiceCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: specialInvoiceCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getSpecialInvoiceCategory
+                setter: setSpecialInvoiceCategory
+            type: int
+        invoiceVariationType:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceVariationType
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoiceVariationType
+                setter: setInvoiceVariationType
+            type: int

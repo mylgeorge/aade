@@ -1,0 +1,6 @@
+Sofar\Aade\InvoicesDoc:
+    xml_root_name: InvoicesDoc
+    xml_root_namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+    xml_namespaces:
+        icls: https://www.aade.gr/myDATA/incomeClassificaton/v1.0
+        ecls: https://www.aade.gr/myDATA/expensesClassificaton/v1.0

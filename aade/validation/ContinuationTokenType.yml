@@ -1,0 +1,12 @@
+Sofar\Aade\ContinuationTokenType:
+    properties:
+        nextPartitionKey:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        nextRowKey:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

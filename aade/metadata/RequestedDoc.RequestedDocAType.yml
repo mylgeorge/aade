@@ -1,0 +1,72 @@
+Sofar\Aade\RequestedDoc\RequestedDocAType:
+    properties:
+        continuationToken:
+            expose: true
+            access_type: public_method
+            serialized_name: continuationToken
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getContinuationToken
+                setter: setContinuationToken
+            type: Sofar\Aade\ContinuationTokenType
+        invoicesDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: invoicesDoc
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoicesDoc
+                setter: setInvoicesDoc
+            type: array<Sofar\Aade\AadeBookInvoiceType>
+            xml_list:
+                inline: false
+                entry_name: invoice
+                skip_when_empty: true
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+        cancelledInvoicesDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: cancelledInvoicesDoc
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCancelledInvoicesDoc
+                setter: setCancelledInvoicesDoc
+            type: array<Sofar\Aade\CancelledInvoiceType>
+            xml_list:
+                inline: false
+                entry_name: cancelledInvoice
+                skip_when_empty: true
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+        incomeClassificationsDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: incomeClassificationsDoc
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIncomeClassificationsDoc
+                setter: setIncomeClassificationsDoc
+            type: array<Sofar\Aade\InvoiceIncomeClassificationType>
+            xml_list:
+                inline: false
+                entry_name: incomeInvoiceClassification
+                skip_when_empty: true
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+        expensesClassificationDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: expensesClassificationDoc
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getExpensesClassificationDoc
+                setter: setExpensesClassificationDoc
+            type: array<Sofar\Aade\InvoiceExpensesClassificationType>
+            xml_list:
+                inline: false
+                entry_name: expensesInvoiceClassification
+                skip_when_empty: true
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'

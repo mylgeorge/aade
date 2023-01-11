@@ -1,0 +1,56 @@
+Sofar\Aade\InvoiceExpensesClassificationType:
+    properties:
+        invoiceMark:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceMark
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getInvoiceMark
+                setter: setInvoiceMark
+            type: int
+        classificationMark:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationMark
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getClassificationMark
+                setter: setClassificationMark
+            type: int
+        entityVatNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: entityVatNumber
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getEntityVatNumber
+                setter: setEntityVatNumber
+            type: string
+        transactionMode:
+            expose: true
+            access_type: public_method
+            serialized_name: transactionMode
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getTransactionMode
+                setter: setTransactionMode
+            type: int
+        invoicesExpensesClassificationDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: invoicesExpensesClassificationDetails
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getInvoicesExpensesClassificationDetails
+                setter: setInvoicesExpensesClassificationDetails
+            xml_list:
+                inline: true
+                entry_name: invoicesExpensesClassificationDetails
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            type: array<Sofar\Aade\InvoicesExpensesClassificationDetailType>

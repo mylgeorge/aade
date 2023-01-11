@@ -1,0 +1,45 @@
+Sofar\Aade\TaxTotalsType:
+    properties:
+        taxType:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '5'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        taxCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+        underlyingValue:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        taxAmount:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        id:
+            -
+                GreaterThanOrEqual:
+                    value: '-128'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '127'
+                    groups:
+                        - xsd_rules

@@ -1,0 +1,68 @@
+Sofar\Aade\AadeBookInvoiceType:
+    properties:
+        mark:
+            -
+                GreaterThanOrEqual:
+                    value: '-9223372036854775808'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+        cancelledByMark:
+            -
+                GreaterThanOrEqual:
+                    value: '-9223372036854775808'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+        transmissionFailure:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '3'
+                    groups:
+                        - xsd_rules
+        issuer:
+            -
+                Valid: null
+        counterpart:
+            -
+                Valid: null
+        invoiceHeader:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        paymentMethods:
+            -
+                Valid: null
+        invoiceDetails:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        taxesTotals:
+            -
+                Valid: null
+        invoiceSummary:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

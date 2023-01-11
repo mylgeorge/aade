@@ -1,0 +1,31 @@
+# config.yml
+# Linux Users: PHP Namespaces use back slash \ rather than a forward slash /
+# So for destinations_php, the namespace would be TestNs\MyApp
+
+xsd2php:
+  namespaces:
+    'https://www.aade.gr/myDATA/expensesClassificaton/v1.0' : 'Sofar\Aade'
+    'https://www.aade.gr/myDATA/incomeClassificaton/v1.0' : 'Sofar\Aade'
+    'http://www.aade.gr/myDATA/invoice/v1.0' : 'Sofar\Aade'
+    '': 'Sofar\Aade'
+
+  destinations_php: 
+    'Sofar\Aade': aade/src
+
+  destinations_jms:
+    'Sofar\Aade': aade/metadata
+ 
+  destinations_validation:
+    'Sofar\Aade': aade/validation
+    
+  # aliases: # optional
+  #   'http://www.example.org/test/':
+  #     MyCustomXSDType:  'MyCustomMappedPHPType'
+  naming_strategy: short # optional and default
+  path_generator: psr4 # optional and default
+  # known_locations: # optional
+  #   "https://www.aade.gr/myDATA/incomeClassificaton/v1.0": ./xsd/incomeClassification-v1.0.6.xsd
+  # known_namespace_locations: # optional
+  #  "icls": 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+  # configs_jms:  #optional
+  #   xml_cdata: false # Disables CDATA

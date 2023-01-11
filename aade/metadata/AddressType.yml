@@ -1,0 +1,42 @@
+Sofar\Aade\AddressType:
+    properties:
+        street:
+            expose: true
+            access_type: public_method
+            serialized_name: street
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getStreet
+                setter: setStreet
+            type: string
+        number:
+            expose: true
+            access_type: public_method
+            serialized_name: number
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getNumber
+                setter: setNumber
+            type: string
+        postalCode:
+            expose: true
+            access_type: public_method
+            serialized_name: postalCode
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getPostalCode
+                setter: setPostalCode
+            type: string
+        city:
+            expose: true
+            access_type: public_method
+            serialized_name: city
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCity
+                setter: setCity
+            type: string

@@ -1,0 +1,5 @@
+Sofar\Aade\RequestedDoc\RequestedDocAType\IncomeClassificationsDocAType:
+    properties:
+        incomeInvoiceClassification:
+            -
+                Valid: null

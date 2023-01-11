@@ -1,0 +1,18 @@
+Sofar\Aade\ErrorType:
+    properties:
+        message:
+            expose: true
+            access_type: public_method
+            serialized_name: message
+            accessor:
+                getter: getMessage
+                setter: setMessage
+            type: string
+        code:
+            expose: true
+            access_type: public_method
+            serialized_name: code
+            accessor:
+                getter: getCode
+                setter: setCode
+            type: int

@@ -1,0 +1,13 @@
+Sofar\Aade\ReceptionEmailsType:
+    properties:
+        email:
+            expose: true
+            access_type: public_method
+            serialized_name: email
+            accessor:
+                getter: getEmail
+                setter: setEmail
+            xml_list:
+                inline: true
+                entry_name: email
+            type: array<string>

@@ -1,0 +1,22 @@
+Sofar\Aade\ErrorType:
+    properties:
+        message:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        code:
+            -
+                GreaterThanOrEqual:
+                    value: '-2147483648'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '2147483647'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

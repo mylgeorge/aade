@@ -1,0 +1,8 @@
+Sofar\Aade\RequestedProviderDoc\RequestedProviderDocAType:
+    properties:
+        continuationToken:
+            -
+                Valid: null
+        invoiceProviderType:
+            -
+                Valid: null

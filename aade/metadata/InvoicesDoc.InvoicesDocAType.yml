@@ -1,0 +1,16 @@
+Sofar\Aade\InvoicesDoc\InvoicesDocAType:
+    properties:
+        invoice:
+            expose: true
+            access_type: public_method
+            serialized_name: invoice
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoice
+                setter: setInvoice
+            xml_list:
+                inline: true
+                entry_name: invoice
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\AadeBookInvoiceType>

@@ -1,0 +1,3 @@
+Sofar\Aade\IncomeClassificationsDoc:
+    xml_root_name: IncomeClassificationsDoc
+    xml_root_namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'

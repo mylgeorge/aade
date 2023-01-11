@@ -1,0 +1,14 @@
+Sofar\Aade\ReceptionProvidersType:
+    properties:
+        providerInfo:
+            expose: true
+            access_type: public_method
+            serialized_name: ProviderInfo
+            accessor:
+                getter: getProviderInfo
+                setter: setProviderInfo
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: VATNumber
+                skip_when_empty: true

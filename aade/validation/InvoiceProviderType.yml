@@ -1,0 +1,32 @@
+Sofar\Aade\InvoiceProviderType:
+    properties:
+        issuerVAT:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        invoiceProviderMark:
+            -
+                GreaterThanOrEqual:
+                    value: '-9223372036854775808'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        invoiceUid:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        authenticationCode:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

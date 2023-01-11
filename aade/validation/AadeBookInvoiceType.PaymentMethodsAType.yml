@@ -1,0 +1,9 @@
+Sofar\Aade\AadeBookInvoiceType\PaymentMethodsAType:
+    properties:
+        paymentMethodDetails:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

@@ -1,0 +1,42 @@
+Sofar\Aade\IncomeClassificationType:
+    properties:
+        classificationType:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationType
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+            accessor:
+                getter: getClassificationType
+                setter: setClassificationType
+            type: string
+        classificationCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationCategory
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+            accessor:
+                getter: getClassificationCategory
+                setter: setClassificationCategory
+            type: string
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: float
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
+            accessor:
+                getter: getId
+                setter: setId
+            type: string

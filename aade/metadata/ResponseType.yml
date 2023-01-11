@@ -1,0 +1,94 @@
+Sofar\Aade\ResponseType:
+    properties:
+        index:
+            expose: true
+            access_type: public_method
+            serialized_name: index
+            accessor:
+                getter: getIndex
+                setter: setIndex
+            type: int
+        invoiceUid:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceUid
+            accessor:
+                getter: getInvoiceUid
+                setter: setInvoiceUid
+            type: string
+        invoiceMark:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceMark
+            accessor:
+                getter: getInvoiceMark
+                setter: setInvoiceMark
+            type: int
+        classificationMark:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationMark
+            accessor:
+                getter: getClassificationMark
+                setter: setClassificationMark
+            type: int
+        cancellationMark:
+            expose: true
+            access_type: public_method
+            serialized_name: cancellationMark
+            accessor:
+                getter: getCancellationMark
+                setter: setCancellationMark
+            type: int
+        authenticationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: authenticationCode
+            accessor:
+                getter: getAuthenticationCode
+                setter: setAuthenticationCode
+            type: string
+        receptionProviders:
+            expose: true
+            access_type: public_method
+            serialized_name: receptionProviders
+            accessor:
+                getter: getReceptionProviders
+                setter: setReceptionProviders
+            type: array<Sofar\Aade\ProviderInfoType>
+            xml_list:
+                inline: false
+                entry_name: ProviderInfo
+                skip_when_empty: true
+        receptionEmails:
+            expose: true
+            access_type: public_method
+            serialized_name: receptionEmails
+            accessor:
+                getter: getReceptionEmails
+                setter: setReceptionEmails
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: email
+                skip_when_empty: true
+        errors:
+            expose: true
+            access_type: public_method
+            serialized_name: errors
+            accessor:
+                getter: getErrors
+                setter: setErrors
+            type: array<Sofar\Aade\ErrorType>
+            xml_list:
+                inline: false
+                entry_name: error
+                skip_when_empty: true
+        statusCode:
+            expose: true
+            access_type: public_method
+            serialized_name: statusCode
+            accessor:
+                getter: getStatusCode
+                setter: setStatusCode
+            type: string

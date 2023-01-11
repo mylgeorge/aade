@@ -1,0 +1,16 @@
+Sofar\Aade\RequestedDoc\RequestedDocAType\ExpensesClassificationDocAType:
+    properties:
+        expensesInvoiceClassification:
+            expose: true
+            access_type: public_method
+            serialized_name: expensesInvoiceClassification
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getExpensesInvoiceClassification
+                setter: setExpensesInvoiceClassification
+            xml_list:
+                inline: true
+                entry_name: expensesInvoiceClassification
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\InvoiceExpensesClassificationType>

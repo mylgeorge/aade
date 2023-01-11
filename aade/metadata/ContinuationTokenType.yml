@@ -1,0 +1,22 @@
+Sofar\Aade\ContinuationTokenType:
+    properties:
+        nextPartitionKey:
+            expose: true
+            access_type: public_method
+            serialized_name: nextPartitionKey
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getNextPartitionKey
+                setter: setNextPartitionKey
+            type: string
+        nextRowKey:
+            expose: true
+            access_type: public_method
+            serialized_name: nextRowKey
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getNextRowKey
+                setter: setNextRowKey
+            type: string

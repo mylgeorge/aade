@@ -1,0 +1,24 @@
+Sofar\Aade\RequestedProviderDoc\RequestedProviderDocAType:
+    properties:
+        continuationToken:
+            expose: true
+            access_type: public_method
+            serialized_name: continuationToken
+            accessor:
+                getter: getContinuationToken
+                setter: setContinuationToken
+            xml_list:
+                inline: true
+                entry_name: continuationToken
+            type: array<Sofar\Aade\ContinuationTokenType>
+        invoiceProviderType:
+            expose: true
+            access_type: public_method
+            serialized_name: InvoiceProviderType
+            accessor:
+                getter: getInvoiceProviderType
+                setter: setInvoiceProviderType
+            xml_list:
+                inline: true
+                entry_name: InvoiceProviderType
+            type: array<Sofar\Aade\InvoiceProviderType>

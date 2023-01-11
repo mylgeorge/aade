@@ -1,0 +1,9 @@
+Sofar\Aade\InvoicesDoc\InvoicesDocAType:
+    properties:
+        invoice:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

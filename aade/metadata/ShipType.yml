@@ -1,0 +1,42 @@
+Sofar\Aade\ShipType:
+    properties:
+        applicationId:
+            expose: true
+            access_type: public_method
+            serialized_name: applicationId
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getApplicationId
+                setter: setApplicationId
+            type: string
+        applicationDate:
+            expose: true
+            access_type: public_method
+            serialized_name: applicationDate
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getApplicationDate
+                setter: setApplicationDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        doy:
+            expose: true
+            access_type: public_method
+            serialized_name: doy
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDoy
+                setter: setDoy
+            type: string
+        shipId:
+            expose: true
+            access_type: public_method
+            serialized_name: shipId
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getShipId
+                setter: setShipId
+            type: string

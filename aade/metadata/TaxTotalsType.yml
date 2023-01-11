@@ -1,0 +1,52 @@
+Sofar\Aade\TaxTotalsType:
+    properties:
+        taxType:
+            expose: true
+            access_type: public_method
+            serialized_name: taxType
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTaxType
+                setter: setTaxType
+            type: string
+        taxCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: taxCategory
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTaxCategory
+                setter: setTaxCategory
+            type: int
+        underlyingValue:
+            expose: true
+            access_type: public_method
+            serialized_name: underlyingValue
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getUnderlyingValue
+                setter: setUnderlyingValue
+            type: float
+        taxAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: taxAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTaxAmount
+                setter: setTaxAmount
+            type: float
+        id:
+            expose: true
+            access_type: public_method
+            serialized_name: id
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getId
+                setter: setId
+            type: string

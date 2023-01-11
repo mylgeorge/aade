@@ -1,0 +1,9 @@
+Sofar\Aade\AadeBookInvoiceType\TaxesTotalsAType:
+    properties:
+        taxes:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

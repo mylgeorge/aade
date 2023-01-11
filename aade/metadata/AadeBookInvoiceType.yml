@@ -1,0 +1,136 @@
+Sofar\Aade\AadeBookInvoiceType:
+    properties:
+        uid:
+            expose: true
+            access_type: public_method
+            serialized_name: uid
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getUid
+                setter: setUid
+            type: string
+        mark:
+            expose: true
+            access_type: public_method
+            serialized_name: mark
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getMark
+                setter: setMark
+            type: int
+        cancelledByMark:
+            expose: true
+            access_type: public_method
+            serialized_name: cancelledByMark
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCancelledByMark
+                setter: setCancelledByMark
+            type: int
+        authenticationCode:
+            expose: true
+            access_type: public_method
+            serialized_name: authenticationCode
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getAuthenticationCode
+                setter: setAuthenticationCode
+            type: string
+        transmissionFailure:
+            expose: true
+            access_type: public_method
+            serialized_name: transmissionFailure
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTransmissionFailure
+                setter: setTransmissionFailure
+            type: string
+        issuer:
+            expose: true
+            access_type: public_method
+            serialized_name: issuer
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIssuer
+                setter: setIssuer
+            type: Sofar\Aade\PartyType
+        counterpart:
+            expose: true
+            access_type: public_method
+            serialized_name: counterpart
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCounterpart
+                setter: setCounterpart
+            type: Sofar\Aade\PartyType
+        invoiceHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceHeader
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoiceHeader
+                setter: setInvoiceHeader
+            type: Sofar\Aade\InvoiceHeaderType
+        paymentMethods:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentMethods
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getPaymentMethods
+                setter: setPaymentMethods
+            type: array<Sofar\Aade\PaymentMethodDetailType>
+            xml_list:
+                inline: false
+                entry_name: paymentMethodDetails
+                skip_when_empty: true
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+        invoiceDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceDetails
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoiceDetails
+                setter: setInvoiceDetails
+            xml_list:
+                inline: true
+                entry_name: invoiceDetails
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\InvoiceRowType>
+        taxesTotals:
+            expose: true
+            access_type: public_method
+            serialized_name: taxesTotals
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTaxesTotals
+                setter: setTaxesTotals
+            type: array<Sofar\Aade\TaxTotalsType>
+            xml_list:
+                inline: false
+                entry_name: taxes
+                skip_when_empty: true
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+        invoiceSummary:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceSummary
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getInvoiceSummary
+                setter: setInvoiceSummary
+            type: Sofar\Aade\InvoiceSummaryType

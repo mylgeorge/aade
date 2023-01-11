@@ -1,0 +1,23 @@
+Sofar\Aade\ShipType:
+    properties:
+        applicationId:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        applicationDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        doy:
+            -
+                Length:
+                    max: '150'
+                    groups:
+                        - xsd_rules
+        shipId:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

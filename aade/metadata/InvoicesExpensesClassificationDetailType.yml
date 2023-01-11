@@ -1,0 +1,26 @@
+Sofar\Aade\InvoicesExpensesClassificationDetailType:
+    properties:
+        lineNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: lineNumber
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getLineNumber
+                setter: setLineNumber
+            type: int
+        expensesClassificationDetailData:
+            expose: true
+            access_type: public_method
+            serialized_name: expensesClassificationDetailData
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getExpensesClassificationDetailData
+                setter: setExpensesClassificationDetailData
+            xml_list:
+                inline: true
+                entry_name: expensesClassificationDetailData
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            type: array<Sofar\Aade\ExpensesClassificationType>
