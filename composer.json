@@ -12,12 +12,14 @@
     "require": {
         "goetas-webservices/xsd2php-runtime": "^0.2",
         "guzzlehttp/guzzle": "^7.0",
-        "symfony/validator": "^6.0"
+        "symfony/validator": "^6.0",
+        "dragonbe/vies": "^2.3"
     },
     "require-dev": {
         "goetas-webservices/xsd2php": "^0.4",
         "phpunit/phpunit": "^9.5",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "symfony/var-dumper": "^6.0"
     },
     "autoload": {
         "psr-4": {

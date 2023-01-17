@@ -20,18 +20,18 @@ class AadeTest extends TestCase
     public function testAadeClient()
     {
 
-        Aade::Fake(false)->SetCredential($_ENV['AADE_USER'], $_ENV['AADE_KEY']);
-
+        Aade::Fake(true)->SetCredential($_ENV['AADE_USER'], $_ENV['AADE_KEY']);
+            
         try {
-            Invoice::create()->sendMany([
+            $response = Invoice::create()->sendMany([
                 [
                     'issuer' => [
-                        'vatNumber' => "123",
+                        'vatNumber' => "XXXXX",
                         'country' => 'GR',
                         'branch' => 0
                     ],
                     'counterpart' => [
-                        'vatNumber' => "123",
+                        'vatNumber' => "XXXXXXX",
                         'country' => 'GR',
                         'branch' => 0,
                         'name' => '-',
@@ -45,61 +45,98 @@ class AadeTest extends TestCase
                     'invoiceHeader' => [
                         'aa' => 123,
                         'series' => "W",
-                        'invoiceType' => '1.1',
-                        'issueDate' => (new \DateTime)->setTimezone(new \DateTimeZone('Europe/Athens')),
+                        'invoiceType' => '1',
+                        'issueDate' => (new \DateTime)->setTimezone(new \DateTimeZone('Europe/Athens')), // setTimestamp()
                         'currency' => 'EUR'
                     ],
                     'paymentMethods' => [
                         [
-                            'amount' => '0',
-                            'type' => '1'
+                            'amount' => 0,
+                            'type' => 1
+                        ],
+                        [
+                            'amount' => 2,
+                            'type' => 2
                         ]
                     ],
-                    'invoiceSummary' => [
-                        'totalFeesAmount' => 0,       //
-                        'totalOtherTaxesAmount' => 0, //
-                        'totalStampDutyAmount' => 0,  //
-                        'totalDeductionsAmount' => 0, //
+                    // 'invoiceSummary' => [
+                    //     'totalFeesAmount' => 0,       // Σύνολο Τελών
+                    //     'totalStampDutyAmount' => 0,  // Σύνολο Χαρτοσήμου
+                    //     'totalDeductionsAmount' => 0, // Σύνολο Κρατήσεων
+                    //     'totalOtherTaxesAmount' => 0, // Σύνολο Λοιπών Φόρων
+                    //     'totalWithheldAmount' => 0,   // Σύνολο Παρ. Φόρων
 
-                        'totalWithheldAmount' => 0,   //
+                    //     'totalVatAmount' => 24,       // Σύνολο ΦΠΑ
+                    //     'totalNetValue' => 100,       // Σύνολο Καθαρής Αξίας (Συνολική Αξία - Φόροι)
+                    //     'totalGrossValue' => 124,     // Συνολική Αξία
 
-                        'totalNetValue' => 0,         //
-                        'totalVatAmount' => 0,        //
-                        'totalGrossValue' => 0,       //
-                        'incomeClassification' => [
-                            [
-                                'amount' => 1,
-                                'classificationCategory' => 'category1_1',
-                                'classificationType' => 'E3_106'
-                            ]
-                        ]
-                    ],
+                    //     'incomeClassification' => [
+                    //         [
+                    //             'amount' => 100,
+                    //             'classificationCategory' => 'category1_2',
+                    //             'classificationType' => 'E3_561_003'
+                    //         ]
+                    //     ]
+                    // ],
                     'invoiceDetails' => [
                         [
                             'lineNumber' => '1',
-                            'netValue' => '1',
-                            'vatCategory' => '1',
-                            'vatAmount' => '1',
+                            // 'recType' => 2,
+                            'netValue' => 100,
+                            'vatAmount' => 24,
+
+                            'vatCategory' => 1,  // 7 (0% VAT)
+                            'vatExemptionCategory' => null,
+
                             'discountOption' => 'true',
-                            'incomeClassification' => [
+                            // 'incomeClassification' => [
+                            //     [
+                            //         'classificationCategory' => 'category1_1',
+                            //         'classificationType' => 'E3_561_005',
+                            //         'amount'=> 999,
+                            //         'id' => 2
+                            //     ],
+                            //     [
+                            //         'classificationCategory' => 'category1_5',
+                            //         'classificationType' => 'E3_561_003',
+                            //         'amount'=> 999,
+                            //         'id' => 3
+                            //     ]
+                            // ]
+                                ],
                                 [
-                                    'amount' => 1,
-                                    'classificationCategory' => 'category1_1',
-                                    'classificationType' => 'E3_106'
+                                    'lineNumber' => '2',
+                                    // 'recType' => 2,
+                                    'netValue' => 100,
+                                    'vatAmount' => 24,
+        
+                                    'vatCategory' => 1,  // 7 (0% VAT)
+                                    'vatExemptionCategory' => null,
+        
+                                    'discountOption' => 'true',
+                                    // 'incomeClassification' => [
+                                    //     [
+                                    //         'classificationCategory' => 'category1_2',
+                                    //         'classificationType' => 'E3_561_005',
+                                    //         'amount'=> 100,
+                                    //         'id' => 1
+                                    //     ]
+                                    // ]
                                 ]
-                            ]
-                        ]
                     ],
-                    'taxesTotals' => [
-                        [
-                            'taxType' => 1,
-                            'taxAmount' => 1,
-                            // taxCategory => 1
-                            // underlyingValue => 0
-                        ]
-                    ]
-                ]
+                    // 'taxesTotals' => [
+                    //     [
+                    //         'taxType' => 1,
+                    //         'taxAmount' => 24,
+                    //         // taxCategory => 1
+                    //         // underlyingValue => 0
+                    //     ]
+                    // ]
+                    ],
             ]);
+
+
+            dd($response);
         } catch (\Exception $e) {
             var_dump(Validator::getErrors());
         }

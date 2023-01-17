@@ -5,10 +5,15 @@ namespace Sofar\Aade\Models;
 use Sofar\Aade\Aade;
 use Sofar\Aade\InvoicesDoc;
 use Sofar\Aade\AadeBookInvoiceType;
+use Sofar\Aade\InvoiceSummaryType;
+
 use Sofar\Aade\Utils\Serializer;
 use Sofar\Aade\Utils\Query;
 use Sofar\Aade\Utils\Helpers;
-use \Sofar\Aade\Utils\Validator;
+use Sofar\Aade\Utils\Validator;
+
+use DragonBe\Vies\Vies;
+use Sofar\Aade\IncomeClassificationType;
 
 class Invoice
 {
@@ -26,6 +31,8 @@ class Invoice
         'incomeClassification' => ['\Sofar\Aade\IncomeClassificationType'],
         'taxesTotals' => ['\Sofar\Aade\TaxTotalsType'],
     ];
+
+    public static $defaultClassificationCategory = 'category1_2';
 
     public function __construct(array $attributes = [])
     {
@@ -61,6 +68,8 @@ class Invoice
 
     protected function save(InvoicesDoc $invoices)
     {
+        $this->prepare($invoices);
+
         if (!Validator::isValid($invoices)) throw new \Exception('Invoices Validation Error!');
 
         $xml = Serializer::serialize($invoices);
@@ -101,7 +110,7 @@ class Invoice
         $invoiceList = new InvoicesDoc();
 
         foreach ($invoices as $invoice) {
-            $this->document = new \Sofar\Aade\AadeBookInvoiceType;
+            $this->document = new AadeBookInvoiceType;
             $this->fill($invoice);
             $invoiceList->addToInvoice(clone $this->document);
         }
@@ -111,9 +120,113 @@ class Invoice
 
     public function fill(array $attributes)
     {
-        if (is_null($this->document)) $this->document = new \Sofar\Aade\AadeBookInvoiceType();
+        if (is_null($this->document)) $this->document = new AadeBookInvoiceType;
 
         $this->make($attributes, $this->document);
+    }
+
+    public function prepare(InvoicesDoc $invoices)
+    {
+        foreach ($invoices->getInvoice() as $invoice) {
+            $invoiceTypeCode = null;
+            $classificationType = null;
+            $classificationCategory = self::$defaultClassificationCategory;
+            $vatExemptionCategory = null;
+
+            $invoiceHeader = $invoice->getInvoiceHeader();
+            $invoiceSummary = $invoice->getInvoiceSummary();
+
+            $invoiceTypeParts = explode('.', $invoiceHeader->getInvoiceType());
+            if (empty($type = $invoiceTypeParts[0])) continue;
+
+            $counterPart = $invoice->getCounterpart();
+            $code = $counterPart->getCountry();
+            if ($code == 'GR') {
+                $classificationType = 'E3_561_001';
+                $invoiceTypeCode = "{$type}.1";
+
+                $counterPart->setAddress(null)->setName(null);
+            } else if ($this->isEuropeanCountry($code)) {
+                $classificationType = 'E3_561_005';
+                $invoiceTypeCode = "{$type}.2";
+                $vatExemptionCategory = 14;
+            } else if (!is_null($counterPart)) {
+                $classificationType = 'E3_561_006';
+                $invoiceTypeCode = "{$type}.3";
+                $vatExemptionCategory = 20;
+            }
+
+            if ($invoiceTypeCode && empty($invoiceTypeParts[1])) $invoiceHeader->setInvoiceType($invoiceTypeCode);
+
+            $totalIncomeClassification = [];
+            $createInvoiceSummary = false;
+
+            if (is_null($invoiceSummary)) {
+                $createInvoiceSummary = true;
+                $invoiceSummary = (new InvoiceSummaryType)->setTotalFeesAmount(0)
+                    ->setTotalStampDutyAmount(0)
+                    ->setTotalDeductionsAmount(0)
+                    ->setTotalOtherTaxesAmount(0)
+                    ->setTotalWithheldAmount(0)
+                    ->setTotalVatAmount(0)
+                    ->setTotalNetValue(0)
+                    ->setTotalGrossValue(0)
+                    ->setIncomeClassification([]);
+                $invoice->setInvoiceSummary($invoiceSummary);
+            }
+
+            foreach ($invoice->getInvoiceDetails() as $index => $line) {
+                $line->setLineNumber($index + 1);
+
+                $amount = $line->getNetValue();
+
+                if (count($line->getIncomeClassification()) === 0) {
+                    $line->addToIncomeClassification(new IncomeClassificationType);
+                }
+
+                foreach ($line->getIncomeClassification() as $l) {
+                    $l->setClassificationCategory($l->getClassificationCategory() ?? $classificationCategory)
+                        ->setClassificationType($l->getClassificationType() ?? $classificationType)
+                        ->setAmount($l->getAmount() ?? $amount);
+
+                    if (empty($totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()])) {
+                        $totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()] = 0;
+                    }
+
+                    $totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()] += $l->getAmount();
+                }
+
+                if ($createInvoiceSummary) {
+                    $grossValue = $invoiceSummary->getTotalGrossValue() + $line->getVatAmount() + $line->getNetValue() - $line->getWithheldAmount();
+
+                    $invoiceSummary->setTotalFeesAmount($invoiceSummary->getTotalFeesAmount() + $line->getFeesAmount())
+                        ->setTotalStampDutyAmount($invoiceSummary->getTotalStampDutyAmount() + $line->getStampDutyAmount())
+                        ->setTotalDeductionsAmount($invoiceSummary->getTotalDeductionsAmount() + $line->getDeductionsAmount())
+                        ->setTotalOtherTaxesAmount($invoiceSummary->getTotalOtherTaxesAmount() + $line->getOtherTaxesAmount())
+                        ->setTotalWithheldAmount($invoiceSummary->getTotalWithheldAmount() + $line->getWithheldAmount())
+                        ->setTotalVatAmount($invoiceSummary->getTotalVatAmount() + $line->getVatAmount())
+                        ->setTotalNetValue($invoiceSummary->getTotalNetValue() + $line->getNetValue())
+                        ->setTotalGrossValue($grossValue);
+                }
+            }
+
+            if ($createInvoiceSummary) {
+                foreach ($totalIncomeClassification as $category => $values) {
+                    foreach ($values as $type => $ammount) {
+                        $invoiceSummary->addToIncomeClassification(
+                            (new IncomeClassificationType)->setAmount($ammount)
+                                ->setClassificationType($type)
+                                ->setClassificationCategory($category)
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    protected function isEuropeanCountry($code)
+    {
+        return in_array($code, array_keys(Vies::listEuropeanCountries()));
     }
 
     public function make(array $attributes, &$parent)
@@ -122,16 +235,16 @@ class Invoice
             $class = self::PARTS[$part] ?? null;
             if (is_array($class)) {
                 $class = reset($class);
-                $obj = new $class;
                 foreach ($properties as $k => $v) {
+                    $obj = new $class;
                     $this->make($v, $obj);
+                    $parent->{'addTo' . ucfirst($part)}(clone $obj);
                 }
-                $parent->{'addTo' . ucfirst($part)}($obj);
             } else if (is_array($properties)) {
                 $obj = $parent->{'get' . ucfirst($part)}();
                 if (is_null($obj)) {
                     $val = !is_array(self::PARTS[$part]) ? new $class : [];
-                    $parent->{'set' . ucfirst($part)}($val);
+                    $parent->{'set' . ucfirst($part)}(clone $val);
                     $obj = $parent->{'get' . ucfirst($part)}();
                 }
 
@@ -190,7 +303,7 @@ class Invoice
             '0',
             '16'
         ]);
-        
+
         return sha1($value);
     }
 }
