@@ -131,6 +131,7 @@ class Invoice
             $invoiceTypeCode = null;
             $classificationType = null;
             $classificationCategory = self::$defaultClassificationCategory;
+            $vatCategory = null;
             $vatExemptionCategory = null;
 
             $invoiceHeader = $invoice->getInvoiceHeader();
@@ -149,10 +150,12 @@ class Invoice
             } else if ($this->isEuropeanCountry($code)) {
                 $classificationType = 'E3_561_005';
                 $invoiceTypeCode = "{$type}.2";
+                $vatCategory = 7;
                 $vatExemptionCategory = 14;
             } else if (!is_null($counterPart)) {
                 $classificationType = 'E3_561_006';
                 $invoiceTypeCode = "{$type}.3";
+                $vatCategory = 7;
                 $vatExemptionCategory = 20;
             }
 
@@ -176,14 +179,15 @@ class Invoice
             }
 
             foreach ($invoice->getInvoiceDetails() as $index => $line) {
-                $line->setLineNumber($index + 1);
-
-                $amount = $line->getNetValue();
+                $line->setLineNumber($index + 1)
+                    ->setVatCategory($vatCategory ?? $line->getVatCategory())
+                    ->setVatExemptionCategory($line->getVatExemptionCategory() ?? $vatExemptionCategory);
 
                 if (count($line->getIncomeClassification()) === 0) {
                     $line->addToIncomeClassification(new IncomeClassificationType);
                 }
 
+                $amount = $line->getNetValue();
                 foreach ($line->getIncomeClassification() as $l) {
                     $l->setClassificationCategory($l->getClassificationCategory() ?? $classificationCategory)
                         ->setClassificationType($l->getClassificationType() ?? $classificationType)
