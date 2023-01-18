@@ -129,9 +129,9 @@ class Invoice
     {
         foreach ($invoices->getInvoice() as $invoice) {
             $code = '';
+            $vatCategory = 1;
             $classificationType = null;
             $classificationCategory = self::$defaultClassificationCategory;
-            $vatCategory = null;
             $vatExemptionCategory = null;
 
             $invoiceHeader = $invoice->getInvoiceHeader();
@@ -198,7 +198,7 @@ class Invoice
 
             foreach ($invoice->getInvoiceDetails() as $index => $line) {
                 $line->setLineNumber($index + 1)
-                    ->setVatCategory($vatCategory ?: $line->getVatCategory())
+                    ->setVatCategory($line->getVatCategory() ?: $vatCategory)
                     ->setVatExemptionCategory($line->getVatExemptionCategory() ?: $vatExemptionCategory);
 
                 if (count($line->getIncomeClassification()) === 0) {

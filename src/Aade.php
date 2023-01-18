@@ -49,4 +49,10 @@ final class Aade
 
         return self::$_client;
     }
+
+    public static function getVatCategory($value){
+        return array_search(intval($value), [
+            24, 16, 6, 17, 9, 4, 0
+        ]) + 1;
+    }
 }

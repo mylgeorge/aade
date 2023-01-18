@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use Sofar\Aade\Aade;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -11,8 +12,9 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testVatCategory()
     {
-        $this->assertTrue(true);
+        $this->assertEquals(Aade::getVatCategory(24.0), 1);
+        $this->assertEquals(Aade::getVatCategory('0.0'), 7);
     }
 }
