@@ -128,7 +128,6 @@ class Invoice
     public function prepare(InvoicesDoc $invoices)
     {
         foreach ($invoices->getInvoice() as $invoice) {
-            $invoiceTypeCode = null;
             $classificationType = null;
             $classificationCategory = self::$defaultClassificationCategory;
             $vatCategory = null;
@@ -137,24 +136,23 @@ class Invoice
             $invoiceHeader = $invoice->getInvoiceHeader();
             $invoiceSummary = $invoice->getInvoiceSummary();
 
-            $invoiceTypeParts = explode('.', $invoiceHeader->getInvoiceType());
-            if (empty($type = $invoiceTypeParts[0])) continue;
+            $invoiceTypeCode = $invoiceHeader->getInvoiceType();
 
             $counterPart = $invoice->getCounterpart();
             $code = $counterPart->getCountry();
             if ($code == 'GR') {
-                $classificationType = 'E3_561_001';
-                $invoiceTypeCode = "{$type}.1";
+                $classificationType = $counterPart->getVatNumber() ? 'E3_561_001' : 'E3_561_003';
+                $invoiceTypeCode = str_replace('.0', '.1', $invoiceTypeCode);
 
                 $counterPart->setAddress(null)->setName(null);
             } else if ($this->isEuropeanCountry($code)) {
                 $classificationType = 'E3_561_005';
-                $invoiceTypeCode = "{$type}.2";
+                $invoiceTypeCode = str_replace('.0', '.2', $invoiceTypeCode);
                 $vatCategory = 7;
                 $vatExemptionCategory = 14;
             } else if (!is_null($counterPart)) {
                 $classificationType = 'E3_561_006';
-                $invoiceTypeCode = "{$type}.3";
+                $invoiceTypeCode = str_replace('.0', '.3', $invoiceTypeCode);
                 $vatCategory = 7;
                 $vatExemptionCategory = 20;
             }
