@@ -210,7 +210,7 @@ class Invoice
                 }
             }
 
-            if ($createInvoiceSummary) {
+            if ($createInvoiceSummary || count($invoiceSummary->getIncomeClassification()) === 0) {
                 foreach ($totalIncomeClassification as $category => $values) {
                     foreach ($values as $type => $ammount) {
                         $invoiceSummary->addToIncomeClassification(
