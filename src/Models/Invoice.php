@@ -174,7 +174,8 @@ class Invoice
 
             if (is_null($invoiceSummary)) {
                 $createInvoiceSummary = true;
-                $invoiceSummary = (new InvoiceSummaryType)->setTotalFeesAmount(0)
+                $invoiceSummary = (new InvoiceSummaryType)
+                    ->setTotalFeesAmount(0)
                     ->setTotalStampDutyAmount(0)
                     ->setTotalDeductionsAmount(0)
                     ->setTotalOtherTaxesAmount(0)
@@ -184,12 +185,21 @@ class Invoice
                     ->setTotalGrossValue(0)
                     ->setIncomeClassification([]);
                 $invoice->setInvoiceSummary($invoiceSummary);
+            } else {
+                $invoiceSummary->setTotalFeesAmount($invoiceSummary->getTotalFeesAmount() ?: 0)
+                    ->setTotalStampDutyAmount($invoiceSummary->getTotalStampDutyAmount() ?: 0)
+                    ->setTotalDeductionsAmount($invoiceSummary->getTotalDeductionsAmount() ?: 0)
+                    ->setTotalOtherTaxesAmount($invoiceSummary->getTotalOtherTaxesAmount() ?: 0)
+                    ->setTotalWithheldAmount($invoiceSummary->getTotalWithheldAmount() ?: 0)
+                    ->setTotalVatAmount($invoiceSummary->getTotalVatAmount() ?: 0)
+                    ->setTotalNetValue($invoiceSummary->getTotalNetValue() ?: 0)
+                    ->setTotalGrossValue($invoiceSummary->getTotalGrossValue() ?: 0);
             }
 
             foreach ($invoice->getInvoiceDetails() as $index => $line) {
                 $line->setLineNumber($index + 1)
-                    ->setVatCategory($vatCategory ?? $line->getVatCategory())
-                    ->setVatExemptionCategory($line->getVatExemptionCategory() ?? $vatExemptionCategory);
+                    ->setVatCategory($vatCategory ?: $line->getVatCategory())
+                    ->setVatExemptionCategory($line->getVatExemptionCategory() ?: $vatExemptionCategory);
 
                 if (count($line->getIncomeClassification()) === 0) {
                     $line->addToIncomeClassification(new IncomeClassificationType);
@@ -197,9 +207,9 @@ class Invoice
 
                 $amount = $line->getNetValue();
                 foreach ($line->getIncomeClassification() as $l) {
-                    $l->setClassificationCategory($l->getClassificationCategory() ?? $classificationCategory)
-                        ->setClassificationType($l->getClassificationType() ?? $classificationType)
-                        ->setAmount($l->getAmount() ?? $amount);
+                    $l->setClassificationCategory($l->getClassificationCategory() ?: $classificationCategory)
+                        ->setClassificationType($l->getClassificationType() ?: $classificationType)
+                        ->setAmount($l->getAmount() ?: $amount);
 
                     if (empty($totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()])) {
                         $totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()] = 0;
