@@ -167,6 +167,7 @@ class Invoice
             }
 
             $invoiceHeader->setInvoiceType(str_replace('.0', $code, $invoiceTypeCode));
+            if ($isRetail) $invoice->setCounterpart(null);
 
             $totalIncomeClassification = [];
             $createInvoiceSummary = false;
