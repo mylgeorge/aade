@@ -128,6 +128,7 @@ class Invoice
     public function prepare(InvoicesDoc $invoices)
     {
         foreach ($invoices->getInvoice() as $invoice) {
+            $code = '';
             $classificationType = null;
             $classificationCategory = self::$defaultClassificationCategory;
             $vatCategory = null;
@@ -139,25 +140,33 @@ class Invoice
             $invoiceTypeCode = $invoiceHeader->getInvoiceType();
 
             $counterPart = $invoice->getCounterpart();
-            $code = $counterPart->getCountry();
-            if ($code == 'GR') {
-                $classificationType = $counterPart->getVatNumber() ? 'E3_561_001' : 'E3_561_003';
-                $invoiceTypeCode = str_replace('.0', '.1', $invoiceTypeCode);
+            $isRetail = empty($counterPart->getVatNumber());
 
-                $counterPart->setAddress(null)->setName(null);
+            $countryCode = $counterPart->getCountry();
+            if ($countryCode === 'GR') {
+                $code = '.1';
+                if ($isRetail) {
+                    $classificationType = 'E3_561_003';
+                    $invoice->setCounterpart(null);
+                } else {
+                    $classificationType = 'E3_561_001';
+                    $counterPart->setAddress(null)->setName(null);
+                }
             } else if ($this->isEuropeanCountry($code)) {
+                $code = '.2';
                 $classificationType = 'E3_561_005';
-                $invoiceTypeCode = str_replace('.0', '.2', $invoiceTypeCode);
-                $vatCategory = 7;
-                $vatExemptionCategory = 14;
+                if (!$isRetail) {
+                    $vatCategory = 7;
+                    $vatExemptionCategory = 14;
+                }
             } else if (!is_null($counterPart)) {
+                $code = '.3';
                 $classificationType = 'E3_561_006';
-                $invoiceTypeCode = str_replace('.0', '.3', $invoiceTypeCode);
                 $vatCategory = 7;
                 $vatExemptionCategory = 20;
             }
 
-            if ($invoiceTypeCode && empty($invoiceTypeParts[1])) $invoiceHeader->setInvoiceType($invoiceTypeCode);
+            $invoiceHeader->setInvoiceType(str_replace('.0', $code, $invoiceTypeCode));
 
             $totalIncomeClassification = [];
             $createInvoiceSummary = false;
@@ -195,7 +204,7 @@ class Invoice
                         $totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()] = 0;
                     }
 
-                    $totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()] += $l->getAmount();
+                    $totalIncomeClassification[$l->getClassificationCategory()][$l->getClassificationType()] += floatval($l->getAmount());
                 }
 
                 if ($createInvoiceSummary) {
@@ -214,9 +223,9 @@ class Invoice
 
             if ($createInvoiceSummary || count($invoiceSummary->getIncomeClassification()) === 0) {
                 foreach ($totalIncomeClassification as $category => $values) {
-                    foreach ($values as $type => $ammount) {
+                    foreach ($values as $type => $amount) {
                         $invoiceSummary->addToIncomeClassification(
-                            (new IncomeClassificationType)->setAmount($ammount)
+                            (new IncomeClassificationType)->setAmount($amount)
                                 ->setClassificationType($type)
                                 ->setClassificationCategory($category)
                         );
