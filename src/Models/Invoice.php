@@ -152,7 +152,7 @@ class Invoice
                     $classificationType = 'E3_561_001';
                     $counterPart->setAddress(null)->setName(null);
                 }
-            } else if ($this->isEuropeanCountry($code)) {
+            } else if ($this->isEuropeanCountry($countryCode)) {
                 $code = '.2';
                 $classificationType = 'E3_561_005';
                 if (!$isRetail) {
