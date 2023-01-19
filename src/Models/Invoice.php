@@ -53,17 +53,15 @@ class Invoice
 
         $report = Serializer::deserialize($response->getBody()->getContents(), 'Sofar\Aade\RequestedDoc');
 
-        // var_dump($report);
-        // $cursor = $report->getContinuationToken();
-        // if(!is_null($cursor)){
+        $cursor = $report->getContinuationToken();
+        if (!is_null($cursor)) {
+            $extra = $this->where([
+                'nextPartitionKey' => $cursor->getNextPartitionKey(),
+                'nextRowKey' => $cursor->getNextRowKey(),
+            ])->get();
+        }
 
-        //     return $this->where([
-        //         'nextPartitionKey' => $cursor->getNextPartitionKey(),
-        //         'nextRowKey' => $cursor->getNextRowKey(),
-        //     ])->get();
-        // }
-
-        return $report->getInvoicesDoc() + $extra;
+        return [...$report->getInvoicesDoc(), ...$extra];
     }
 
     protected function save(InvoicesDoc $invoices)
@@ -148,8 +146,7 @@ class Invoice
                 if (!$isRetail) {
                     $classificationType = 'E3_561_001';
                     $counterPart->setAddress(null)->setName(null);
-                }
-                else {
+                } else {
                     $classificationType = 'E3_561_003';
                     $invoiceTypeCode = "11.1";
                     $counterPart = null;
@@ -160,8 +157,7 @@ class Invoice
                 if (!$isRetail) {
                     $vatCategory = 7;
                     $vatExemptionCategory = 14;
-                }
-                else {
+                } else {
                     $invoiceTypeCode = "11.1";
                     $counterPart = null;
                 }
@@ -170,7 +166,7 @@ class Invoice
                 $classificationType = 'E3_561_006';
                 $vatCategory = 7;
                 $vatExemptionCategory = 8;
-                if($isRetail) $counterPart->setVatNumber('000000000');
+                if ($isRetail) $counterPart->setVatNumber('000000000');
             }
 
             $invoiceHeader->setInvoiceType(str_replace('.0', $code, $invoiceTypeCode));
