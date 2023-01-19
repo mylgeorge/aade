@@ -13,84 +13,63 @@ use \Sofar\Aade\Utils\Validator;
 
 Aade::SetCredential(***AADE_USER***, ***AADE_KEY***);
 
-try {
-    Invoice::create()->sendMany([
+$invoice = [
+    'issuer' => [
+        'vatNumber' => VAT_ID,
+        'country' => 'GR',
+        'branch' => 0
+    ],
+    'invoiceHeader' => [
+        'aa' => $order->getInvoceNo(),
+        'series' => "W",
+        'invoiceType' => '1.0',
+        'issueDate' => date_create( $order->getDate() ),
+        'currency' => 'EUR'
+    ],
+    'paymentMethods' => [
         [
-            'issuer' => [
-                'vatNumber' => "123",
-                'country' => 'GR',
-                'branch' => 0
-            ],
-            'counterpart' => [
-                'vatNumber' => "123",
-                'country' => 'GR',
-                'branch' => 0,
-                'name' => '-',
-                'address' => [
-                    'city' => '-',
-                    'number' => '-',
-                    'street' => '-',
-                    'postalCode' => '-'
-                ]
-            ],
-            'invoiceHeader' => [
-                'aa' => 123,
-                'series' => "W",
-                'invoiceType' => '1.1',
-                'issueDate' => (new \DateTime)->setTimezone(new \DateTimeZone('Europe/Athens')),
-                'currency' => 'EUR'
-            ],
-            'paymentMethods' => [
-                [
-                    'amount' => '0',
-                    'type' => '1'
-                ]
-            ],
-            'invoiceSummary' => [
-                'totalFeesAmount' => 0,       //
-                'totalOtherTaxesAmount' => 0, //
-                'totalStampDutyAmount' => 0,  //
-                'totalDeductionsAmount' => 0, //
-
-                'totalWithheldAmount' => 0,   //
-
-                'totalNetValue' => 0,         //
-                'totalVatAmount' => 0,        //
-                'totalGrossValue' => 0,       //
-                'incomeClassification' => [
-                    [
-                        'amount' => 1,
-                        'classificationCategory' => 'category1_1',
-                        'classificationType' => 'E3_106'
-                    ]
-                ]
-            ],
-            'invoiceDetails' => [
-                [
-                    'lineNumber' => '1',
-                    'netValue' => '1',
-                    'vatCategory' => '1',
-                    'vatAmount' => '1',
-                    'discountOption' => 'true',
-                    'incomeClassification' => [
-                        [
-                            'amount' => 1,
-                            'classificationCategory' => 'category1_1',
-                            'classificationType' => 'E3_106'
-                        ]
-                    ]
-                ]
-            ],
-            'taxesTotals' => [
-                [
-                    'taxType' => 1,
-                    'taxAmount' => 1,
-                    // taxCategory => 1
-                    // underlyingValue => 0
-                ]
-            ]
+            'amount' => $total,
+            'type' => 1
         ]
-    ]);
+    ],
+    'counterpart' => [
+        'vatNumber' => $vatNumber,
+        'country' => $paymentAddr->getCountry(),
+        'branch' => 0,
+        'name' => $paymentAddr->getCompany(),
+        'address' => [
+            'city' => $paymentAddr->getCity(),
+            'number' => $paymentAddr->getNumber(),
+            'street' => $paymentAddr->getAddress(),
+            'postalCode' => $paymentAddr->getPostal()
+        ]
+    ],
+    'invoiceDetails' => [],
+    'invoiceSummary' => [    
+        'totalNetValue' => $price->getValue(),
+        'totalVatAmount' => $price->getTaxValue(),
+        'totalGrossValue' => $total,
+    ],
+];
+
+foreach(getProducts() as $product){
+    $invoice['invoiceDetails'][] = [
+        'discountOption' => 'true',
+        'quantity' => $product->getQuantity(),
+        'netValue' => $product->getPrice()->getValue(),
+        'vatAmount' => $product->getPrice()->getTaxValue(),
+        'vatCategory' => Aade::getVatCategory($product->getPrice()->getTaxRate()),
+    ];
+}
+
+try {
+    $response = (new Invoice)->send($invoice);
+    // OR
+    // Invoice::create()->sendMany([ $invoice ]);
+
+    if($r->getStatusCode() !== 'Success'){
+        echo 'Error while trying to send invoice';
+    }
 } catch (\Exception $e) {
     var_dump(Validator::getErrors());
 }

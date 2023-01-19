@@ -148,7 +148,6 @@ class Invoice
                     $counterPart->setAddress(null)->setName(null);
                 } else {
                     $classificationType = 'E3_561_003';
-                    $invoiceTypeCode = "11.1";
                     $counterPart = null;
                 }
             } else if ($this->isEuropeanCountry($countryCode)) {
@@ -158,7 +157,6 @@ class Invoice
                     $vatCategory = 7;
                     $vatExemptionCategory = 14;
                 } else {
-                    $invoiceTypeCode = "11.1";
                     $counterPart = null;
                 }
             } else if (!is_null($counterPart)) {
