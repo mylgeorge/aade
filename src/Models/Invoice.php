@@ -145,11 +145,8 @@ class Invoice
             $countryCode = $counterPart->getCountry();
             if ($countryCode === 'GR') {
                 $code = '.1';
-                if ($isRetail) {
-                    $classificationType = 'E3_561_003';
-                    $invoice->setCounterpart(null);
-                } else {
-                    $classificationType = 'E3_561_001';
+                $classificationType = 'E3_561_001';
+                if (!$isRetail) {                    
                     $counterPart->setAddress(null)->setName(null);
                 }
             } else if ($this->isEuropeanCountry($countryCode)) {
@@ -163,11 +160,11 @@ class Invoice
                 $code = '.3';
                 $classificationType = 'E3_561_006';
                 $vatCategory = 7;
-                $vatExemptionCategory = 20;
+                $vatExemptionCategory = 8;
             }
 
             $invoiceHeader->setInvoiceType(str_replace('.0', $code, $invoiceTypeCode));
-            if ($isRetail) $invoice->setCounterpart(null);
+            if ($isRetail) $counterPart->setVatNumber('000000000');
 
             $totalIncomeClassification = [];
             $createInvoiceSummary = false;
