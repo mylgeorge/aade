@@ -147,6 +147,7 @@ class Invoice
                     $classificationType = 'E3_561_001';
                     $counterPart->setAddress(null)->setName(null);
                 } else {
+                    $invoiceTypeCode = '11.1';
                     $classificationType = 'E3_561_003';
                     $counterPart = null;
                 }
@@ -157,6 +158,8 @@ class Invoice
                     $vatCategory = 7;
                     $vatExemptionCategory = 14;
                 } else {
+                    $invoiceTypeCode = '11.1';
+                    $classificationType = 'E3_561_003';
                     $counterPart = null;
                 }
             } else if (!is_null($counterPart)) {
