@@ -42,7 +42,6 @@ final class Aade
             self::$_client = new Client([
                 'base_uri' => $aade_url,
                 'headers' => $aade_headers,
-                'verify' => !self::$testing,
                 'timeout' => 30
             ]);
         }
