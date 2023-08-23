@@ -28,9 +28,9 @@ class RequestedDocAType
     private $incomeClassificationsDoc = null;
 
     /**
-     * @var \Sofar\Aade\InvoiceExpensesClassificationType[] $expensesClassificationDoc
+     * @var \Sofar\Aade\InvoiceExpensesClassificationType[] $expensesClassificationsDoc
      */
-    private $expensesClassificationDoc = null;
+    private $expensesClassificationsDoc = null;
 
     /**
      * Gets as continuationToken
@@ -228,53 +228,53 @@ class RequestedDocAType
      * @return self
      * @param \Sofar\Aade\InvoiceExpensesClassificationType $expensesInvoiceClassification
      */
-    public function addToExpensesClassificationDoc(\Sofar\Aade\InvoiceExpensesClassificationType $expensesInvoiceClassification)
+    public function addToExpensesClassificationsDoc(\Sofar\Aade\InvoiceExpensesClassificationType $expensesInvoiceClassification)
     {
-        $this->expensesClassificationDoc[] = $expensesInvoiceClassification;
+        $this->expensesClassificationsDoc[] = $expensesInvoiceClassification;
         return $this;
     }
 
     /**
-     * isset expensesClassificationDoc
+     * isset expensesClassificationsDoc
      *
      * @param int|string $index
      * @return bool
      */
-    public function issetExpensesClassificationDoc($index)
+    public function issetExpensesClassificationsDoc($index)
     {
-        return isset($this->expensesClassificationDoc[$index]);
+        return isset($this->expensesClassificationsDoc[$index]);
     }
 
     /**
-     * unset expensesClassificationDoc
+     * unset expensesClassificationsDoc
      *
      * @param int|string $index
      * @return void
      */
-    public function unsetExpensesClassificationDoc($index)
+    public function unsetExpensesClassificationsDoc($index)
     {
-        unset($this->expensesClassificationDoc[$index]);
+        unset($this->expensesClassificationsDoc[$index]);
     }
 
     /**
-     * Gets as expensesClassificationDoc
+     * Gets as expensesClassificationsDoc
      *
      * @return \Sofar\Aade\InvoiceExpensesClassificationType[]
      */
-    public function getExpensesClassificationDoc()
+    public function getExpensesClassificationsDoc()
     {
-        return $this->expensesClassificationDoc;
+        return $this->expensesClassificationsDoc;
     }
 
     /**
-     * Sets a new expensesClassificationDoc
+     * Sets a new expensesClassificationsDoc
      *
-     * @param \Sofar\Aade\InvoiceExpensesClassificationType[] $expensesClassificationDoc
+     * @param \Sofar\Aade\InvoiceExpensesClassificationType[] $expensesClassificationsDoc
      * @return self
      */
-    public function setExpensesClassificationDoc(array $expensesClassificationDoc = null)
+    public function setExpensesClassificationsDoc(array $expensesClassificationsDoc = null)
     {
-        $this->expensesClassificationDoc = $expensesClassificationDoc;
+        $this->expensesClassificationsDoc = $expensesClassificationsDoc;
         return $this;
     }
 }

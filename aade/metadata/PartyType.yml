@@ -70,3 +70,13 @@ Sofar\Aade\PartyType:
                 getter: getSupplyAccountNo
                 setter: setSupplyAccountNo
             type: string
+        countryDocumentId:
+            expose: true
+            access_type: public_method
+            serialized_name: countryDocumentId
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCountryDocumentId
+                setter: setCountryDocumentId
+            type: string

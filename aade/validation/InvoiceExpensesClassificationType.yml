@@ -40,3 +40,14 @@ Sofar\Aade\InvoiceExpensesClassificationType:
         invoicesExpensesClassificationDetails:
             -
                 Valid: null
+        classificationPostMode:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '2'
+                    groups:
+                        - xsd_rules

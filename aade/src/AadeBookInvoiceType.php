@@ -97,6 +97,22 @@ class AadeBookInvoiceType
     private $invoiceSummary = null;
 
     /**
+     * QR Code Url
+     *
+     * @var string $qrCodeUrl
+     */
+    private $qrCodeUrl = null;
+
+    /**
+     * Λοιπές Λεπτομέρειες Διακίνησης (Ορισμός - Αλλαγή Μτφ Μέσων, Μεταφορτώσεις, κλπ)
+     *
+     * @var \Sofar\Aade\TransportDetailType[] $otherTransportDetails
+     */
+    private $otherTransportDetails = [
+        
+    ];
+
+    /**
      * Gets as uid
      *
      * Αναγνωριστικό Παραστατικού
@@ -525,6 +541,98 @@ class AadeBookInvoiceType
     public function setInvoiceSummary(\Sofar\Aade\InvoiceSummaryType $invoiceSummary)
     {
         $this->invoiceSummary = $invoiceSummary;
+        return $this;
+    }
+
+    /**
+     * Gets as qrCodeUrl
+     *
+     * QR Code Url
+     *
+     * @return string
+     */
+    public function getQrCodeUrl()
+    {
+        return $this->qrCodeUrl;
+    }
+
+    /**
+     * Sets a new qrCodeUrl
+     *
+     * QR Code Url
+     *
+     * @param string $qrCodeUrl
+     * @return self
+     */
+    public function setQrCodeUrl($qrCodeUrl)
+    {
+        $this->qrCodeUrl = $qrCodeUrl;
+        return $this;
+    }
+
+    /**
+     * Adds as otherTransportDetails
+     *
+     * Λοιπές Λεπτομέρειες Διακίνησης (Ορισμός - Αλλαγή Μτφ Μέσων, Μεταφορτώσεις, κλπ)
+     *
+     * @return self
+     * @param \Sofar\Aade\TransportDetailType $otherTransportDetails
+     */
+    public function addToOtherTransportDetails(\Sofar\Aade\TransportDetailType $otherTransportDetails)
+    {
+        $this->otherTransportDetails[] = $otherTransportDetails;
+        return $this;
+    }
+
+    /**
+     * isset otherTransportDetails
+     *
+     * Λοιπές Λεπτομέρειες Διακίνησης (Ορισμός - Αλλαγή Μτφ Μέσων, Μεταφορτώσεις, κλπ)
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetOtherTransportDetails($index)
+    {
+        return isset($this->otherTransportDetails[$index]);
+    }
+
+    /**
+     * unset otherTransportDetails
+     *
+     * Λοιπές Λεπτομέρειες Διακίνησης (Ορισμός - Αλλαγή Μτφ Μέσων, Μεταφορτώσεις, κλπ)
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetOtherTransportDetails($index)
+    {
+        unset($this->otherTransportDetails[$index]);
+    }
+
+    /**
+     * Gets as otherTransportDetails
+     *
+     * Λοιπές Λεπτομέρειες Διακίνησης (Ορισμός - Αλλαγή Μτφ Μέσων, Μεταφορτώσεις, κλπ)
+     *
+     * @return \Sofar\Aade\TransportDetailType[]
+     */
+    public function getOtherTransportDetails()
+    {
+        return $this->otherTransportDetails;
+    }
+
+    /**
+     * Sets a new otherTransportDetails
+     *
+     * Λοιπές Λεπτομέρειες Διακίνησης (Ορισμός - Αλλαγή Μτφ Μέσων, Μεταφορτώσεις, κλπ)
+     *
+     * @param \Sofar\Aade\TransportDetailType[] $otherTransportDetails
+     * @return self
+     */
+    public function setOtherTransportDetails(array $otherTransportDetails = null)
+    {
+        $this->otherTransportDetails = $otherTransportDetails;
         return $this;
     }
 }

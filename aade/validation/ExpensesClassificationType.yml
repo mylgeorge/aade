@@ -31,6 +31,34 @@ Sofar\Aade\ExpensesClassificationType:
                 NotNull:
                     groups:
                         - xsd_rules
+        vatAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        vatCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '8'
+                    groups:
+                        - xsd_rules
+        vatExemptionCategory:
+            -
+                GreaterThanOrEqual:
+                    value: '1'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '31'
+                    groups:
+                        - xsd_rules
         id:
             -
                 GreaterThanOrEqual:

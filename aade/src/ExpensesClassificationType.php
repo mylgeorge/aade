@@ -32,6 +32,27 @@ class ExpensesClassificationType
     private $amount = null;
 
     /**
+     * Πόσο Φόρου
+     *
+     * @var float $vatAmount
+     */
+    private $vatAmount = null;
+
+    /**
+     * Κατηγορία ΦΠΑ
+     *
+     * @var int $vatCategory
+     */
+    private $vatCategory = null;
+
+    /**
+     * Κατηγορία Εξαίρεσης ΦΠΑ
+     *
+     * @var int $vatExemptionCategory
+     */
+    private $vatExemptionCategory = null;
+
+    /**
      * Μοναδικός Αριθμός Χαρακτηρισμού
      *
      * @var string $id
@@ -113,6 +134,84 @@ class ExpensesClassificationType
     public function setAmount($amount)
     {
         $this->amount = $amount;
+        return $this;
+    }
+
+    /**
+     * Gets as vatAmount
+     *
+     * Πόσο Φόρου
+     *
+     * @return float
+     */
+    public function getVatAmount()
+    {
+        return $this->vatAmount;
+    }
+
+    /**
+     * Sets a new vatAmount
+     *
+     * Πόσο Φόρου
+     *
+     * @param float $vatAmount
+     * @return self
+     */
+    public function setVatAmount($vatAmount)
+    {
+        $this->vatAmount = $vatAmount;
+        return $this;
+    }
+
+    /**
+     * Gets as vatCategory
+     *
+     * Κατηγορία ΦΠΑ
+     *
+     * @return int
+     */
+    public function getVatCategory()
+    {
+        return $this->vatCategory;
+    }
+
+    /**
+     * Sets a new vatCategory
+     *
+     * Κατηγορία ΦΠΑ
+     *
+     * @param int $vatCategory
+     * @return self
+     */
+    public function setVatCategory($vatCategory)
+    {
+        $this->vatCategory = $vatCategory;
+        return $this;
+    }
+
+    /**
+     * Gets as vatExemptionCategory
+     *
+     * Κατηγορία Εξαίρεσης ΦΠΑ
+     *
+     * @return int
+     */
+    public function getVatExemptionCategory()
+    {
+        return $this->vatExemptionCategory;
+    }
+
+    /**
+     * Sets a new vatExemptionCategory
+     *
+     * Κατηγορία Εξαίρεσης ΦΠΑ
+     *
+     * @param int $vatExemptionCategory
+     * @return self
+     */
+    public function setVatExemptionCategory($vatExemptionCategory)
+    {
+        $this->vatExemptionCategory = $vatExemptionCategory;
         return $this;
     }
 

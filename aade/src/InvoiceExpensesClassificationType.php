@@ -46,6 +46,13 @@ class InvoiceExpensesClassificationType
     ];
 
     /**
+     * Μέθοδος Υποβολής Χαρακτηρισμού
+     *
+     * @var string $classificationPostMode
+     */
+    private $classificationPostMode = null;
+
+    /**
      * Gets as invoiceMark
      *
      * Μοναδικός Αριθμός Καταχώρησης Παραστατικού
@@ -202,6 +209,32 @@ class InvoiceExpensesClassificationType
     public function setInvoicesExpensesClassificationDetails(array $invoicesExpensesClassificationDetails = null)
     {
         $this->invoicesExpensesClassificationDetails = $invoicesExpensesClassificationDetails;
+        return $this;
+    }
+
+    /**
+     * Gets as classificationPostMode
+     *
+     * Μέθοδος Υποβολής Χαρακτηρισμού
+     *
+     * @return string
+     */
+    public function getClassificationPostMode()
+    {
+        return $this->classificationPostMode;
+    }
+
+    /**
+     * Sets a new classificationPostMode
+     *
+     * Μέθοδος Υποβολής Χαρακτηρισμού
+     *
+     * @param string $classificationPostMode
+     * @return self
+     */
+    public function setClassificationPostMode($classificationPostMode)
+    {
+        $this->classificationPostMode = $classificationPostMode;
         return $this;
     }
 }

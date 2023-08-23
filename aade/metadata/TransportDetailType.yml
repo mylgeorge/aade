@@ -1,0 +1,12 @@
+Sofar\Aade\TransportDetailType:
+    properties:
+        vehicleNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: vehicleNumber
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVehicleNumber
+                setter: setVehicleNumber
+            type: string

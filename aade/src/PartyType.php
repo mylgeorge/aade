@@ -16,7 +16,7 @@ class PartyType
     private $vatNumber = null;
 
     /**
-     * Κωδ, Χώρας
+     * Κωδ. Χώρας
      *
      * @var string $country
      */
@@ -54,6 +54,13 @@ class PartyType
     private $supplyAccountNo = null;
 
     /**
+     * Κωδ. Χώρας Έκδοσης Επίσημου Εγγράφου
+     *
+     * @var string $countryDocumentId
+     */
+    private $countryDocumentId = null;
+
+    /**
      * Gets as vatNumber
      *
      * @return string
@@ -78,7 +85,7 @@ class PartyType
     /**
      * Gets as country
      *
-     * Κωδ, Χώρας
+     * Κωδ. Χώρας
      *
      * @return string
      */
@@ -90,7 +97,7 @@ class PartyType
     /**
      * Sets a new country
      *
-     * Κωδ, Χώρας
+     * Κωδ. Χώρας
      *
      * @param string $country
      * @return self
@@ -220,6 +227,32 @@ class PartyType
     public function setSupplyAccountNo($supplyAccountNo)
     {
         $this->supplyAccountNo = $supplyAccountNo;
+        return $this;
+    }
+
+    /**
+     * Gets as countryDocumentId
+     *
+     * Κωδ. Χώρας Έκδοσης Επίσημου Εγγράφου
+     *
+     * @return string
+     */
+    public function getCountryDocumentId()
+    {
+        return $this->countryDocumentId;
+    }
+
+    /**
+     * Sets a new countryDocumentId
+     *
+     * Κωδ. Χώρας Έκδοσης Επίσημου Εγγράφου
+     *
+     * @param string $countryDocumentId
+     * @return self
+     */
+    public function setCountryDocumentId($countryDocumentId)
+    {
+        $this->countryDocumentId = $countryDocumentId;
         return $this;
     }
 }

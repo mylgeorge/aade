@@ -1,0 +1,22 @@
+Sofar\Aade\EntityType:
+    properties:
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: type
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getType
+                setter: setType
+            type: int
+        entityData:
+            expose: true
+            access_type: public_method
+            serialized_name: entityData
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getEntityData
+                setter: setEntityData
+            type: Sofar\Aade\PartyType

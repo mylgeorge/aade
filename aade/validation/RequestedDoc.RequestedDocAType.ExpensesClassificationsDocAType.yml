@@ -1,0 +1,5 @@
+Sofar\Aade\RequestedDoc\RequestedDocAType\ExpensesClassificationsDocAType:
+    properties:
+        expensesInvoiceClassification:
+            -
+                Valid: null

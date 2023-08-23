@@ -54,3 +54,13 @@ Sofar\Aade\InvoiceExpensesClassificationType:
                 entry_name: invoicesExpensesClassificationDetails
                 namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
             type: array<Sofar\Aade\InvoicesExpensesClassificationDetailType>
+        classificationPostMode:
+            expose: true
+            access_type: public_method
+            serialized_name: classificationPostMode
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getClassificationPostMode
+                setter: setClassificationPostMode
+            type: string

@@ -125,6 +125,15 @@ class InvoiceHeaderType
     private $invoiceVariationType = null;
 
     /**
+     * Λοιπές συσχετιζόμενες οντοτήτες
+     *
+     * @var \Sofar\Aade\EntityType[] $otherCorrelatedEntities
+     */
+    private $otherCorrelatedEntities = [
+        
+    ];
+
+    /**
      * Gets as series
      *
      * Σειρά Παραστατικού
@@ -577,6 +586,72 @@ class InvoiceHeaderType
     public function setInvoiceVariationType($invoiceVariationType)
     {
         $this->invoiceVariationType = $invoiceVariationType;
+        return $this;
+    }
+
+    /**
+     * Adds as otherCorrelatedEntities
+     *
+     * Λοιπές συσχετιζόμενες οντοτήτες
+     *
+     * @return self
+     * @param \Sofar\Aade\EntityType $otherCorrelatedEntities
+     */
+    public function addToOtherCorrelatedEntities(\Sofar\Aade\EntityType $otherCorrelatedEntities)
+    {
+        $this->otherCorrelatedEntities[] = $otherCorrelatedEntities;
+        return $this;
+    }
+
+    /**
+     * isset otherCorrelatedEntities
+     *
+     * Λοιπές συσχετιζόμενες οντοτήτες
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetOtherCorrelatedEntities($index)
+    {
+        return isset($this->otherCorrelatedEntities[$index]);
+    }
+
+    /**
+     * unset otherCorrelatedEntities
+     *
+     * Λοιπές συσχετιζόμενες οντοτήτες
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetOtherCorrelatedEntities($index)
+    {
+        unset($this->otherCorrelatedEntities[$index]);
+    }
+
+    /**
+     * Gets as otherCorrelatedEntities
+     *
+     * Λοιπές συσχετιζόμενες οντοτήτες
+     *
+     * @return \Sofar\Aade\EntityType[]
+     */
+    public function getOtherCorrelatedEntities()
+    {
+        return $this->otherCorrelatedEntities;
+    }
+
+    /**
+     * Sets a new otherCorrelatedEntities
+     *
+     * Λοιπές συσχετιζόμενες οντοτήτες
+     *
+     * @param \Sofar\Aade\EntityType[] $otherCorrelatedEntities
+     * @return self
+     */
+    public function setOtherCorrelatedEntities(array $otherCorrelatedEntities = null)
+    {
+        $this->otherCorrelatedEntities = $otherCorrelatedEntities;
         return $this;
     }
 }

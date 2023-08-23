@@ -55,15 +55,15 @@ Sofar\Aade\RequestedDoc\RequestedDocAType:
                 entry_name: incomeInvoiceClassification
                 skip_when_empty: true
                 namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
-        expensesClassificationDoc:
+        expensesClassificationsDoc:
             expose: true
             access_type: public_method
-            serialized_name: expensesClassificationDoc
+            serialized_name: expensesClassificationsDoc
             xml_element:
                 namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
             accessor:
-                getter: getExpensesClassificationDoc
-                setter: setExpensesClassificationDoc
+                getter: getExpensesClassificationsDoc
+                setter: setExpensesClassificationsDoc
             type: array<Sofar\Aade\InvoiceExpensesClassificationType>
             xml_list:
                 inline: false

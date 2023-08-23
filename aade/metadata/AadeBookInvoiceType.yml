@@ -134,3 +134,27 @@ Sofar\Aade\AadeBookInvoiceType:
                 getter: getInvoiceSummary
                 setter: setInvoiceSummary
             type: Sofar\Aade\InvoiceSummaryType
+        qrCodeUrl:
+            expose: true
+            access_type: public_method
+            serialized_name: qrCodeUrl
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getQrCodeUrl
+                setter: setQrCodeUrl
+            type: string
+        otherTransportDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: otherTransportDetails
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getOtherTransportDetails
+                setter: setOtherTransportDetails
+            xml_list:
+                inline: true
+                entry_name: otherTransportDetails
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\TransportDetailType>

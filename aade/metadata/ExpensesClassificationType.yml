@@ -30,6 +30,36 @@ Sofar\Aade\ExpensesClassificationType:
                 getter: getAmount
                 setter: setAmount
             type: float
+        vatAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: vatAmount
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getVatAmount
+                setter: setVatAmount
+            type: float
+        vatCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: vatCategory
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getVatCategory
+                setter: setVatCategory
+            type: int
+        vatExemptionCategory:
+            expose: true
+            access_type: public_method
+            serialized_name: vatExemptionCategory
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/expensesClassificaton/v1.0'
+            accessor:
+                getter: getVatExemptionCategory
+                setter: setVatExemptionCategory
+            type: int
         id:
             expose: true
             access_type: public_method

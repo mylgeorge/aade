@@ -66,3 +66,6 @@ Sofar\Aade\AadeBookInvoiceType:
                         - xsd_rules
             -
                 Valid: null
+        otherTransportDetails:
+            -
+                Valid: null

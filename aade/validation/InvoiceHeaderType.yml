@@ -302,7 +302,7 @@ Sofar\Aade\InvoiceHeaderType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '4'
+                    value: '10'
                     groups:
                         - xsd_rules
         invoiceVariationType:
@@ -316,3 +316,6 @@ Sofar\Aade\InvoiceHeaderType:
                     value: '4'
                     groups:
                         - xsd_rules
+        otherCorrelatedEntities:
+            -
+                Valid: null

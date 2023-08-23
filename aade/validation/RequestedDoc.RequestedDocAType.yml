@@ -27,7 +27,7 @@ Sofar\Aade\RequestedDoc\RequestedDocAType:
                         - xsd_rules
             -
                 Valid: null
-        expensesClassificationDoc:
+        expensesClassificationsDoc:
             -
                 Count:
                     max: 2
