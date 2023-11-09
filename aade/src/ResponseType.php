@@ -18,6 +18,13 @@ class ResponseType
     private $index = null;
 
     /**
+     * QR Code Url
+     *
+     * @var string $qrUrl
+     */
+    private $qrUrl = null;
+
+    /**
      * Αναγνωριστικό οντότητας
      *
      * @var string $invoiceUid
@@ -103,6 +110,32 @@ class ResponseType
     public function setIndex($index)
     {
         $this->index = $index;
+        return $this;
+    }
+
+    /**
+     * Gets as qrUrl
+     *
+     * QR Code Url
+     *
+     * @return string
+     */
+    public function getQrUrl()
+    {
+        return $this->qrUrl;
+    }
+
+    /**
+     * Sets a new qrUrl
+     *
+     * QR Code Url
+     *
+     * @param string $qrUrl
+     * @return self
+     */
+    public function setQrUrl($qrUrl)
+    {
+        $this->qrUrl = $qrUrl;
         return $this;
     }
 

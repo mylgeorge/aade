@@ -8,6 +8,14 @@ Sofar\Aade\ResponseType:
                 getter: getIndex
                 setter: setIndex
             type: int
+        qrUrl:
+            expose: true
+            access_type: public_method
+            serialized_name: qrUrl
+            accessor:
+                getter: getQrUrl
+                setter: setQrUrl
+            type: string
         invoiceUid:
             expose: true
             access_type: public_method

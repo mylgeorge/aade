@@ -37,7 +37,8 @@ final class Aade
             $aade_url = self::$testing ? self::AADE_URL_DEV : self::AADE_URL_PROD;
             $aade_headers = [
                 'aade-user-id' => self::$aade_user,
-                'Ocp-Apim-Subscription-Key' => self::$aade_key
+                'Ocp-Apim-Subscription-Key' => self::$aade_key,
+                'Accept-Encoding' => 'gzip'
             ];
             self::$_client = new Client([
                 'base_uri' => $aade_url,
