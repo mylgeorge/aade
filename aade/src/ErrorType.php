@@ -20,7 +20,7 @@ class ErrorType
     /**
      * Κωδικός Σφάλαματος
      *
-     * @var int $code
+     * @var string $code
      */
     private $code = null;
 
@@ -55,7 +55,7 @@ class ErrorType
      *
      * Κωδικός Σφάλαματος
      *
-     * @return int
+     * @return string
      */
     public function getCode()
     {
@@ -67,7 +67,7 @@ class ErrorType
      *
      * Κωδικός Σφάλαματος
      *
-     * @param int $code
+     * @param string $code
      * @return self
      */
     public function setCode($code)

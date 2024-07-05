@@ -1,0 +1,12 @@
+Sofar\Aade\PaymentMethodsDoc\PaymentMethodsDocAType:
+    properties:
+        paymentMethods:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentMethods
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/paymentMethod/v1.0'
+            accessor:
+                getter: getPaymentMethods
+                setter: setPaymentMethods
+            type: Sofar\Aade\PaymentMethodType

@@ -8,7 +8,7 @@ Sofar\Aade\EntityType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '2'
+                    value: '6'
                     groups:
                         - xsd_rules
             -

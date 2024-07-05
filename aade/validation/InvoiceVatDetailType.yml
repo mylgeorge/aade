@@ -1,0 +1,7 @@
+Sofar\Aade\InvoiceVatDetailType:
+    properties:
+        issueDate:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

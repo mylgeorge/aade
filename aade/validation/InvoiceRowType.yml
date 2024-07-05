@@ -21,6 +21,19 @@ Sofar\Aade\InvoiceRowType:
                     value: '7'
                     groups:
                         - xsd_rules
+        taricNo:
+            -
+                Length:
+                    min: '10'
+                    max: '10'
+                    groups:
+                        - xsd_rules
+        itemCode:
+            -
+                Length:
+                    max: '50'
+                    groups:
+                        - xsd_rules
         itemDescr:
             -
                 Length:
@@ -76,7 +89,7 @@ Sofar\Aade\InvoiceRowType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '3'
+                    value: '7'
                     groups:
                         - xsd_rules
         invoiceDetailType:
@@ -108,7 +121,7 @@ Sofar\Aade\InvoiceRowType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '8'
+                    value: '10'
                     groups:
                         - xsd_rules
             -
@@ -198,7 +211,7 @@ Sofar\Aade\InvoiceRowType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '19'
+                    value: '30'
                     groups:
                         - xsd_rules
         otherTaxesAmount:
@@ -229,5 +242,22 @@ Sofar\Aade\InvoiceRowType:
             -
                 GreaterThan:
                     value: '0'
+                    groups:
+                        - xsd_rules
+        otherMeasurementUnitQuantity:
+            -
+                GreaterThanOrEqual:
+                    value: '-2147483648'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '2147483647'
+                    groups:
+                        - xsd_rules
+        otherMeasurementUnitTitle:
+            -
+                Length:
+                    max: '150'
                     groups:
                         - xsd_rules

@@ -8,50 +8,14 @@ namespace Sofar\Aade\IncomeClassificationsDoc;
 class IncomeClassificationsDocAType
 {
     /**
-     * @var \Sofar\Aade\InvoiceIncomeClassificationType[] $incomeInvoiceClassification
+     * @var \Sofar\Aade\InvoiceIncomeClassificationType $incomeInvoiceClassification
      */
-    private $incomeInvoiceClassification = [
-        
-    ];
-
-    /**
-     * Adds as incomeInvoiceClassification
-     *
-     * @return self
-     * @param \Sofar\Aade\InvoiceIncomeClassificationType $incomeInvoiceClassification
-     */
-    public function addToIncomeInvoiceClassification(\Sofar\Aade\InvoiceIncomeClassificationType $incomeInvoiceClassification)
-    {
-        $this->incomeInvoiceClassification[] = $incomeInvoiceClassification;
-        return $this;
-    }
-
-    /**
-     * isset incomeInvoiceClassification
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetIncomeInvoiceClassification($index)
-    {
-        return isset($this->incomeInvoiceClassification[$index]);
-    }
-
-    /**
-     * unset incomeInvoiceClassification
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetIncomeInvoiceClassification($index)
-    {
-        unset($this->incomeInvoiceClassification[$index]);
-    }
+    private $incomeInvoiceClassification = null;
 
     /**
      * Gets as incomeInvoiceClassification
      *
-     * @return \Sofar\Aade\InvoiceIncomeClassificationType[]
+     * @return \Sofar\Aade\InvoiceIncomeClassificationType
      */
     public function getIncomeInvoiceClassification()
     {
@@ -61,10 +25,10 @@ class IncomeClassificationsDocAType
     /**
      * Sets a new incomeInvoiceClassification
      *
-     * @param \Sofar\Aade\InvoiceIncomeClassificationType[] $incomeInvoiceClassification
+     * @param \Sofar\Aade\InvoiceIncomeClassificationType $incomeInvoiceClassification
      * @return self
      */
-    public function setIncomeInvoiceClassification(array $incomeInvoiceClassification)
+    public function setIncomeInvoiceClassification(\Sofar\Aade\InvoiceIncomeClassificationType $incomeInvoiceClassification)
     {
         $this->incomeInvoiceClassification = $incomeInvoiceClassification;
         return $this;

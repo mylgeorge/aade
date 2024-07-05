@@ -134,6 +134,57 @@ class InvoiceHeaderType
     ];
 
     /**
+     * Λοιπά Γενικά Στοιχεία Διακίνησης
+     *
+     * @var \Sofar\Aade\OtherDeliveryNoteHeaderType $otherDeliveryNoteHeader
+     */
+    private $otherDeliveryNoteHeader = null;
+
+    /**
+     * Ένδειξη Παραστατικού Διακίνησης
+     *
+     * @var bool $isDeliveryNote
+     */
+    private $isDeliveryNote = null;
+
+    /**
+     * Τίτλος της Λοιπής Αιτίας Διακίνησης
+     *
+     * @var string $otherMovePurposeTitle
+     */
+    private $otherMovePurposeTitle = null;
+
+    /**
+     * Ένδειξη Εισπράξης Τρίτων
+     *
+     * @var bool $thirdPartyCollection
+     */
+    private $thirdPartyCollection = null;
+
+    /**
+     * Πολλαπλά Συνδεόμενα MARKs
+     *
+     * @var int[] $multipleConnectedMarks
+     */
+    private $multipleConnectedMarks = [
+        
+    ];
+
+    /**
+     * AA ΤΡΑΠΕΖΙOY (για Δελτία Παραγγελίας Εστίασης)
+     *
+     * @var string $tableAA
+     */
+    private $tableAA = null;
+
+    /**
+     * Ένδειξη συνολικής αναίρεσης Δελτίων Παραγελίας
+     *
+     * @var bool $totalCancelDeliveryOrders
+     */
+    private $totalCancelDeliveryOrders = null;
+
+    /**
      * Gets as series
      *
      * Σειρά Παραστατικού
@@ -652,6 +703,228 @@ class InvoiceHeaderType
     public function setOtherCorrelatedEntities(array $otherCorrelatedEntities = null)
     {
         $this->otherCorrelatedEntities = $otherCorrelatedEntities;
+        return $this;
+    }
+
+    /**
+     * Gets as otherDeliveryNoteHeader
+     *
+     * Λοιπά Γενικά Στοιχεία Διακίνησης
+     *
+     * @return \Sofar\Aade\OtherDeliveryNoteHeaderType
+     */
+    public function getOtherDeliveryNoteHeader()
+    {
+        return $this->otherDeliveryNoteHeader;
+    }
+
+    /**
+     * Sets a new otherDeliveryNoteHeader
+     *
+     * Λοιπά Γενικά Στοιχεία Διακίνησης
+     *
+     * @param \Sofar\Aade\OtherDeliveryNoteHeaderType $otherDeliveryNoteHeader
+     * @return self
+     */
+    public function setOtherDeliveryNoteHeader(?\Sofar\Aade\OtherDeliveryNoteHeaderType $otherDeliveryNoteHeader = null)
+    {
+        $this->otherDeliveryNoteHeader = $otherDeliveryNoteHeader;
+        return $this;
+    }
+
+    /**
+     * Gets as isDeliveryNote
+     *
+     * Ένδειξη Παραστατικού Διακίνησης
+     *
+     * @return bool
+     */
+    public function getIsDeliveryNote()
+    {
+        return $this->isDeliveryNote;
+    }
+
+    /**
+     * Sets a new isDeliveryNote
+     *
+     * Ένδειξη Παραστατικού Διακίνησης
+     *
+     * @param bool $isDeliveryNote
+     * @return self
+     */
+    public function setIsDeliveryNote($isDeliveryNote)
+    {
+        $this->isDeliveryNote = $isDeliveryNote;
+        return $this;
+    }
+
+    /**
+     * Gets as otherMovePurposeTitle
+     *
+     * Τίτλος της Λοιπής Αιτίας Διακίνησης
+     *
+     * @return string
+     */
+    public function getOtherMovePurposeTitle()
+    {
+        return $this->otherMovePurposeTitle;
+    }
+
+    /**
+     * Sets a new otherMovePurposeTitle
+     *
+     * Τίτλος της Λοιπής Αιτίας Διακίνησης
+     *
+     * @param string $otherMovePurposeTitle
+     * @return self
+     */
+    public function setOtherMovePurposeTitle($otherMovePurposeTitle)
+    {
+        $this->otherMovePurposeTitle = $otherMovePurposeTitle;
+        return $this;
+    }
+
+    /**
+     * Gets as thirdPartyCollection
+     *
+     * Ένδειξη Εισπράξης Τρίτων
+     *
+     * @return bool
+     */
+    public function getThirdPartyCollection()
+    {
+        return $this->thirdPartyCollection;
+    }
+
+    /**
+     * Sets a new thirdPartyCollection
+     *
+     * Ένδειξη Εισπράξης Τρίτων
+     *
+     * @param bool $thirdPartyCollection
+     * @return self
+     */
+    public function setThirdPartyCollection($thirdPartyCollection)
+    {
+        $this->thirdPartyCollection = $thirdPartyCollection;
+        return $this;
+    }
+
+    /**
+     * Adds as multipleConnectedMarks
+     *
+     * Πολλαπλά Συνδεόμενα MARKs
+     *
+     * @return self
+     * @param int $multipleConnectedMarks
+     */
+    public function addToMultipleConnectedMarks($multipleConnectedMarks)
+    {
+        $this->multipleConnectedMarks[] = $multipleConnectedMarks;
+        return $this;
+    }
+
+    /**
+     * isset multipleConnectedMarks
+     *
+     * Πολλαπλά Συνδεόμενα MARKs
+     *
+     * @param int|string $index
+     * @return bool
+     */
+    public function issetMultipleConnectedMarks($index)
+    {
+        return isset($this->multipleConnectedMarks[$index]);
+    }
+
+    /**
+     * unset multipleConnectedMarks
+     *
+     * Πολλαπλά Συνδεόμενα MARKs
+     *
+     * @param int|string $index
+     * @return void
+     */
+    public function unsetMultipleConnectedMarks($index)
+    {
+        unset($this->multipleConnectedMarks[$index]);
+    }
+
+    /**
+     * Gets as multipleConnectedMarks
+     *
+     * Πολλαπλά Συνδεόμενα MARKs
+     *
+     * @return int[]
+     */
+    public function getMultipleConnectedMarks()
+    {
+        return $this->multipleConnectedMarks;
+    }
+
+    /**
+     * Sets a new multipleConnectedMarks
+     *
+     * Πολλαπλά Συνδεόμενα MARKs
+     *
+     * @param int[] $multipleConnectedMarks
+     * @return self
+     */
+    public function setMultipleConnectedMarks(array $multipleConnectedMarks = null)
+    {
+        $this->multipleConnectedMarks = $multipleConnectedMarks;
+        return $this;
+    }
+
+    /**
+     * Gets as tableAA
+     *
+     * AA ΤΡΑΠΕΖΙOY (για Δελτία Παραγγελίας Εστίασης)
+     *
+     * @return string
+     */
+    public function getTableAA()
+    {
+        return $this->tableAA;
+    }
+
+    /**
+     * Sets a new tableAA
+     *
+     * AA ΤΡΑΠΕΖΙOY (για Δελτία Παραγγελίας Εστίασης)
+     *
+     * @param string $tableAA
+     * @return self
+     */
+    public function setTableAA($tableAA)
+    {
+        $this->tableAA = $tableAA;
+        return $this;
+    }
+
+    /**
+     * Gets as totalCancelDeliveryOrders
+     *
+     * Ένδειξη συνολικής αναίρεσης Δελτίων Παραγελίας
+     *
+     * @return bool
+     */
+    public function getTotalCancelDeliveryOrders()
+    {
+        return $this->totalCancelDeliveryOrders;
+    }
+
+    /**
+     * Sets a new totalCancelDeliveryOrders
+     *
+     * Ένδειξη συνολικής αναίρεσης Δελτίων Παραγελίας
+     *
+     * @param bool $totalCancelDeliveryOrders
+     * @return self
+     */
+    public function setTotalCancelDeliveryOrders($totalCancelDeliveryOrders)
+    {
+        $this->totalCancelDeliveryOrders = $totalCancelDeliveryOrders;
         return $this;
     }
 }

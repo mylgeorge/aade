@@ -30,3 +30,53 @@ Sofar\Aade\PaymentMethodDetailType:
                 getter: getPaymentMethodInfo
                 setter: setPaymentMethodInfo
             type: string
+        tipAmount:
+            expose: true
+            access_type: public_method
+            serialized_name: tipAmount
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTipAmount
+                setter: setTipAmount
+            type: float
+        transactionId:
+            expose: true
+            access_type: public_method
+            serialized_name: transactionId
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTransactionId
+                setter: setTransactionId
+            type: string
+        tid:
+            expose: true
+            access_type: public_method
+            serialized_name: tid
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTid
+                setter: setTid
+            type: string
+        providersSignature:
+            expose: true
+            access_type: public_method
+            serialized_name: ProvidersSignature
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getProvidersSignature
+                setter: setProvidersSignature
+            type: Sofar\Aade\ProviderSignatureType
+        eCRToken:
+            expose: true
+            access_type: public_method
+            serialized_name: ECRToken
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getECRToken
+                setter: setECRToken
+            type: Sofar\Aade\ECRTokenType

@@ -27,7 +27,7 @@ class Serializer
                 ->addMetadataDir(self::MetaDir(), 'Sofar\Aade')
                 ->configureHandlers(function (HandlerRegistryInterface $handler) {
                     $handler->registerSubscribingHandler(new BaseTypesHandler()); // XMLSchema List handling
-                    $handler->registerSubscribingHandler(new XmlSchemaDateHandler()); // XMLSchema date handling
+                    $handler->registerSubscribingHandler(new XmlSchemaDateHandler('Europe/Athens')); // XMLSchema date handling
                 })
                 ->build();
         }

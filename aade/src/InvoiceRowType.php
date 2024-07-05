@@ -25,6 +25,20 @@ class InvoiceRowType
     private $recType = null;
 
     /**
+     * Κωδικός Taric
+     *
+     * @var string $taricNo
+     */
+    private $taricNo = null;
+
+    /**
+     * Κωδικός Είδους
+     *
+     * @var string $itemCode
+     */
+    private $itemCode = null;
+
+    /**
      * Περιγραφή Είδους
      *
      * @var string $itemDescr
@@ -197,6 +211,27 @@ class InvoiceRowType
     private $quantity15 = null;
 
     /**
+     * Πλήθος Μονάδας Μέτρησης Τεμάχια Άλλα
+     *
+     * @var int $otherMeasurementUnitQuantity
+     */
+    private $otherMeasurementUnitQuantity = null;
+
+    /**
+     * Τίτλος Μονάδας Μέτρησης Τεμάχια Άλλα
+     *
+     * @var string $otherMeasurementUnitTitle
+     */
+    private $otherMeasurementUnitTitle = null;
+
+    /**
+     * Ένδειξη μη συμμετοχής στο ΦΠΑ (έσοδα – εκροές)
+     *
+     * @var bool $notVAT195
+     */
+    private $notVAT195 = null;
+
+    /**
      * Gets as lineNumber
      *
      * ΑΑ Γραμμής
@@ -245,6 +280,58 @@ class InvoiceRowType
     public function setRecType($recType)
     {
         $this->recType = $recType;
+        return $this;
+    }
+
+    /**
+     * Gets as taricNo
+     *
+     * Κωδικός Taric
+     *
+     * @return string
+     */
+    public function getTaricNo()
+    {
+        return $this->taricNo;
+    }
+
+    /**
+     * Sets a new taricNo
+     *
+     * Κωδικός Taric
+     *
+     * @param string $taricNo
+     * @return self
+     */
+    public function setTaricNo($taricNo)
+    {
+        $this->taricNo = $taricNo;
+        return $this;
+    }
+
+    /**
+     * Gets as itemCode
+     *
+     * Κωδικός Είδους
+     *
+     * @return string
+     */
+    public function getItemCode()
+    {
+        return $this->itemCode;
+    }
+
+    /**
+     * Sets a new itemCode
+     *
+     * Κωδικός Είδους
+     *
+     * @param string $itemCode
+     * @return self
+     */
+    public function setItemCode($itemCode)
+    {
+        $this->itemCode = $itemCode;
         return $this;
     }
 
@@ -949,6 +1036,84 @@ class InvoiceRowType
     public function setQuantity15($quantity15)
     {
         $this->quantity15 = $quantity15;
+        return $this;
+    }
+
+    /**
+     * Gets as otherMeasurementUnitQuantity
+     *
+     * Πλήθος Μονάδας Μέτρησης Τεμάχια Άλλα
+     *
+     * @return int
+     */
+    public function getOtherMeasurementUnitQuantity()
+    {
+        return $this->otherMeasurementUnitQuantity;
+    }
+
+    /**
+     * Sets a new otherMeasurementUnitQuantity
+     *
+     * Πλήθος Μονάδας Μέτρησης Τεμάχια Άλλα
+     *
+     * @param int $otherMeasurementUnitQuantity
+     * @return self
+     */
+    public function setOtherMeasurementUnitQuantity($otherMeasurementUnitQuantity)
+    {
+        $this->otherMeasurementUnitQuantity = $otherMeasurementUnitQuantity;
+        return $this;
+    }
+
+    /**
+     * Gets as otherMeasurementUnitTitle
+     *
+     * Τίτλος Μονάδας Μέτρησης Τεμάχια Άλλα
+     *
+     * @return string
+     */
+    public function getOtherMeasurementUnitTitle()
+    {
+        return $this->otherMeasurementUnitTitle;
+    }
+
+    /**
+     * Sets a new otherMeasurementUnitTitle
+     *
+     * Τίτλος Μονάδας Μέτρησης Τεμάχια Άλλα
+     *
+     * @param string $otherMeasurementUnitTitle
+     * @return self
+     */
+    public function setOtherMeasurementUnitTitle($otherMeasurementUnitTitle)
+    {
+        $this->otherMeasurementUnitTitle = $otherMeasurementUnitTitle;
+        return $this;
+    }
+
+    /**
+     * Gets as notVAT195
+     *
+     * Ένδειξη μη συμμετοχής στο ΦΠΑ (έσοδα – εκροές)
+     *
+     * @return bool
+     */
+    public function getNotVAT195()
+    {
+        return $this->notVAT195;
+    }
+
+    /**
+     * Sets a new notVAT195
+     *
+     * Ένδειξη μη συμμετοχής στο ΦΠΑ (έσοδα – εκροές)
+     *
+     * @param bool $notVAT195
+     * @return self
+     */
+    public function setNotVAT195($notVAT195)
+    {
+        $this->notVAT195 = $notVAT195;
         return $this;
     }
 }

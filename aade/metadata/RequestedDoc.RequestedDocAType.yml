@@ -19,12 +19,7 @@ Sofar\Aade\RequestedDoc\RequestedDocAType:
             accessor:
                 getter: getInvoicesDoc
                 setter: setInvoicesDoc
-            type: array<Sofar\Aade\AadeBookInvoiceType>
-            xml_list:
-                inline: false
-                entry_name: invoice
-                skip_when_empty: true
-                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: Sofar\Aade\RequestedDoc\RequestedDocAType\InvoicesDocAType
         cancelledInvoicesDoc:
             expose: true
             access_type: public_method
@@ -34,12 +29,7 @@ Sofar\Aade\RequestedDoc\RequestedDocAType:
             accessor:
                 getter: getCancelledInvoicesDoc
                 setter: setCancelledInvoicesDoc
-            type: array<Sofar\Aade\CancelledInvoiceType>
-            xml_list:
-                inline: false
-                entry_name: cancelledInvoice
-                skip_when_empty: true
-                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: Sofar\Aade\RequestedDoc\RequestedDocAType\CancelledInvoicesDocAType
         incomeClassificationsDoc:
             expose: true
             access_type: public_method
@@ -49,12 +39,7 @@ Sofar\Aade\RequestedDoc\RequestedDocAType:
             accessor:
                 getter: getIncomeClassificationsDoc
                 setter: setIncomeClassificationsDoc
-            type: array<Sofar\Aade\InvoiceIncomeClassificationType>
-            xml_list:
-                inline: false
-                entry_name: incomeInvoiceClassification
-                skip_when_empty: true
-                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: Sofar\Aade\RequestedDoc\RequestedDocAType\IncomeClassificationsDocAType
         expensesClassificationsDoc:
             expose: true
             access_type: public_method
@@ -64,9 +49,14 @@ Sofar\Aade\RequestedDoc\RequestedDocAType:
             accessor:
                 getter: getExpensesClassificationsDoc
                 setter: setExpensesClassificationsDoc
-            type: array<Sofar\Aade\InvoiceExpensesClassificationType>
-            xml_list:
-                inline: false
-                entry_name: expensesInvoiceClassification
-                skip_when_empty: true
+            type: Sofar\Aade\RequestedDoc\RequestedDocAType\ExpensesClassificationsDocAType
+        paymentMethodsDoc:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentMethodsDoc
+            xml_element:
                 namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getPaymentMethodsDoc
+                setter: setPaymentMethodsDoc
+            type: Sofar\Aade\RequestedDoc\RequestedDocAType\PaymentMethodsDocAType

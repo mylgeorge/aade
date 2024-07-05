@@ -1,0 +1,46 @@
+Sofar\Aade\PaymentMethodType:
+    properties:
+        invoiceMark:
+            expose: true
+            access_type: public_method
+            serialized_name: invoiceMark
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/paymentMethod/v1.0'
+            accessor:
+                getter: getInvoiceMark
+                setter: setInvoiceMark
+            type: int
+        paymentMethodMark:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentMethodMark
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/paymentMethod/v1.0'
+            accessor:
+                getter: getPaymentMethodMark
+                setter: setPaymentMethodMark
+            type: int
+        entityVatNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: entityVatNumber
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/paymentMethod/v1.0'
+            accessor:
+                getter: getEntityVatNumber
+                setter: setEntityVatNumber
+            type: string
+        paymentMethodDetails:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentMethodDetails
+            xml_element:
+                namespace: 'https://www.aade.gr/myDATA/paymentMethod/v1.0'
+            accessor:
+                getter: getPaymentMethodDetails
+                setter: setPaymentMethodDetails
+            xml_list:
+                inline: true
+                entry_name: paymentMethodDetails
+                namespace: 'https://www.aade.gr/myDATA/paymentMethod/v1.0'
+            type: array<Sofar\Aade\PaymentMethodDetailType>

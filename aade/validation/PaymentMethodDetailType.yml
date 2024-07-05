@@ -8,7 +8,7 @@ Sofar\Aade\PaymentMethodDetailType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '7'
+                    value: '8'
                     groups:
                         - xsd_rules
             -
@@ -25,3 +25,21 @@ Sofar\Aade\PaymentMethodDetailType:
                 NotNull:
                     groups:
                         - xsd_rules
+        tipAmount:
+            -
+                GreaterThanOrEqual:
+                    value: '0'
+                    groups:
+                        - xsd_rules
+        tid:
+            -
+                Length:
+                    max: '200'
+                    groups:
+                        - xsd_rules
+        providersSignature:
+            -
+                Valid: null
+        eCRToken:
+            -
+                Valid: null

@@ -8,14 +8,6 @@ Sofar\Aade\ResponseType:
                 getter: getIndex
                 setter: setIndex
             type: int
-        qrUrl:
-            expose: true
-            access_type: public_method
-            serialized_name: qrUrl
-            accessor:
-                getter: getQrUrl
-                setter: setQrUrl
-            type: string
         invoiceUid:
             expose: true
             access_type: public_method
@@ -32,6 +24,14 @@ Sofar\Aade\ResponseType:
                 getter: getInvoiceMark
                 setter: setInvoiceMark
             type: int
+        qrUrl:
+            expose: true
+            access_type: public_method
+            serialized_name: qrUrl
+            accessor:
+                getter: getQrUrl
+                setter: setQrUrl
+            type: string
         classificationMark:
             expose: true
             access_type: public_method
@@ -48,6 +48,14 @@ Sofar\Aade\ResponseType:
                 getter: getCancellationMark
                 setter: setCancellationMark
             type: int
+        paymentMethodMark:
+            expose: true
+            access_type: public_method
+            serialized_name: paymentMethodMark
+            accessor:
+                getter: getPaymentMethodMark
+                setter: setPaymentMethodMark
+            type: int
         authenticationCode:
             expose: true
             access_type: public_method
@@ -63,11 +71,7 @@ Sofar\Aade\ResponseType:
             accessor:
                 getter: getReceptionProviders
                 setter: setReceptionProviders
-            type: array<Sofar\Aade\ProviderInfoType>
-            xml_list:
-                inline: false
-                entry_name: ProviderInfo
-                skip_when_empty: true
+            type: Sofar\Aade\ReceptionProvidersType
         receptionEmails:
             expose: true
             access_type: public_method
@@ -75,11 +79,7 @@ Sofar\Aade\ResponseType:
             accessor:
                 getter: getReceptionEmails
                 setter: setReceptionEmails
-            type: array<string>
-            xml_list:
-                inline: false
-                entry_name: email
-                skip_when_empty: true
+            type: Sofar\Aade\ReceptionEmailsType
         errors:
             expose: true
             access_type: public_method

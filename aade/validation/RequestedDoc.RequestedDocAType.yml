@@ -5,33 +5,16 @@ Sofar\Aade\RequestedDoc\RequestedDocAType:
                 Valid: null
         invoicesDoc:
             -
-                Count:
-                    max: 2
-                    groups:
-                        - xsd_rules
-            -
                 Valid: null
         cancelledInvoicesDoc:
-            -
-                Count:
-                    max: 2
-                    groups:
-                        - xsd_rules
             -
                 Valid: null
         incomeClassificationsDoc:
             -
-                Count:
-                    max: 2
-                    groups:
-                        - xsd_rules
-            -
                 Valid: null
         expensesClassificationsDoc:
             -
-                Count:
-                    max: 2
-                    groups:
-                        - xsd_rules
+                Valid: null
+        paymentMethodsDoc:
             -
                 Valid: null

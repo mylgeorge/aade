@@ -13,24 +13,29 @@ class RequestedDocAType
     private $continuationToken = null;
 
     /**
-     * @var \Sofar\Aade\AadeBookInvoiceType[] $invoicesDoc
+     * @var \Sofar\Aade\RequestedDoc\RequestedDocAType\InvoicesDocAType $invoicesDoc
      */
     private $invoicesDoc = null;
 
     /**
-     * @var \Sofar\Aade\CancelledInvoiceType[] $cancelledInvoicesDoc
+     * @var \Sofar\Aade\RequestedDoc\RequestedDocAType\CancelledInvoicesDocAType $cancelledInvoicesDoc
      */
     private $cancelledInvoicesDoc = null;
 
     /**
-     * @var \Sofar\Aade\InvoiceIncomeClassificationType[] $incomeClassificationsDoc
+     * @var \Sofar\Aade\RequestedDoc\RequestedDocAType\IncomeClassificationsDocAType $incomeClassificationsDoc
      */
     private $incomeClassificationsDoc = null;
 
     /**
-     * @var \Sofar\Aade\InvoiceExpensesClassificationType[] $expensesClassificationsDoc
+     * @var \Sofar\Aade\RequestedDoc\RequestedDocAType\ExpensesClassificationsDocAType $expensesClassificationsDoc
      */
     private $expensesClassificationsDoc = null;
+
+    /**
+     * @var \Sofar\Aade\RequestedDoc\RequestedDocAType\PaymentMethodsDocAType $paymentMethodsDoc
+     */
+    private $paymentMethodsDoc = null;
 
     /**
      * Gets as continuationToken
@@ -55,43 +60,9 @@ class RequestedDocAType
     }
 
     /**
-     * Adds as invoice
-     *
-     * @return self
-     * @param \Sofar\Aade\AadeBookInvoiceType $invoice
-     */
-    public function addToInvoicesDoc(\Sofar\Aade\AadeBookInvoiceType $invoice)
-    {
-        $this->invoicesDoc[] = $invoice;
-        return $this;
-    }
-
-    /**
-     * isset invoicesDoc
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetInvoicesDoc($index)
-    {
-        return isset($this->invoicesDoc[$index]);
-    }
-
-    /**
-     * unset invoicesDoc
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetInvoicesDoc($index)
-    {
-        unset($this->invoicesDoc[$index]);
-    }
-
-    /**
      * Gets as invoicesDoc
      *
-     * @return \Sofar\Aade\AadeBookInvoiceType[]
+     * @return \Sofar\Aade\RequestedDoc\RequestedDocAType\InvoicesDocAType
      */
     public function getInvoicesDoc()
     {
@@ -101,53 +72,19 @@ class RequestedDocAType
     /**
      * Sets a new invoicesDoc
      *
-     * @param \Sofar\Aade\AadeBookInvoiceType[] $invoicesDoc
+     * @param \Sofar\Aade\RequestedDoc\RequestedDocAType\InvoicesDocAType $invoicesDoc
      * @return self
      */
-    public function setInvoicesDoc(array $invoicesDoc = null)
+    public function setInvoicesDoc(?\Sofar\Aade\RequestedDoc\RequestedDocAType\InvoicesDocAType $invoicesDoc = null)
     {
         $this->invoicesDoc = $invoicesDoc;
         return $this;
     }
 
     /**
-     * Adds as cancelledInvoice
-     *
-     * @return self
-     * @param \Sofar\Aade\CancelledInvoiceType $cancelledInvoice
-     */
-    public function addToCancelledInvoicesDoc(\Sofar\Aade\CancelledInvoiceType $cancelledInvoice)
-    {
-        $this->cancelledInvoicesDoc[] = $cancelledInvoice;
-        return $this;
-    }
-
-    /**
-     * isset cancelledInvoicesDoc
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetCancelledInvoicesDoc($index)
-    {
-        return isset($this->cancelledInvoicesDoc[$index]);
-    }
-
-    /**
-     * unset cancelledInvoicesDoc
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetCancelledInvoicesDoc($index)
-    {
-        unset($this->cancelledInvoicesDoc[$index]);
-    }
-
-    /**
      * Gets as cancelledInvoicesDoc
      *
-     * @return \Sofar\Aade\CancelledInvoiceType[]
+     * @return \Sofar\Aade\RequestedDoc\RequestedDocAType\CancelledInvoicesDocAType
      */
     public function getCancelledInvoicesDoc()
     {
@@ -157,53 +94,19 @@ class RequestedDocAType
     /**
      * Sets a new cancelledInvoicesDoc
      *
-     * @param \Sofar\Aade\CancelledInvoiceType[] $cancelledInvoicesDoc
+     * @param \Sofar\Aade\RequestedDoc\RequestedDocAType\CancelledInvoicesDocAType $cancelledInvoicesDoc
      * @return self
      */
-    public function setCancelledInvoicesDoc(array $cancelledInvoicesDoc = null)
+    public function setCancelledInvoicesDoc(?\Sofar\Aade\RequestedDoc\RequestedDocAType\CancelledInvoicesDocAType $cancelledInvoicesDoc = null)
     {
         $this->cancelledInvoicesDoc = $cancelledInvoicesDoc;
         return $this;
     }
 
     /**
-     * Adds as incomeInvoiceClassification
-     *
-     * @return self
-     * @param \Sofar\Aade\InvoiceIncomeClassificationType $incomeInvoiceClassification
-     */
-    public function addToIncomeClassificationsDoc(\Sofar\Aade\InvoiceIncomeClassificationType $incomeInvoiceClassification)
-    {
-        $this->incomeClassificationsDoc[] = $incomeInvoiceClassification;
-        return $this;
-    }
-
-    /**
-     * isset incomeClassificationsDoc
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetIncomeClassificationsDoc($index)
-    {
-        return isset($this->incomeClassificationsDoc[$index]);
-    }
-
-    /**
-     * unset incomeClassificationsDoc
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetIncomeClassificationsDoc($index)
-    {
-        unset($this->incomeClassificationsDoc[$index]);
-    }
-
-    /**
      * Gets as incomeClassificationsDoc
      *
-     * @return \Sofar\Aade\InvoiceIncomeClassificationType[]
+     * @return \Sofar\Aade\RequestedDoc\RequestedDocAType\IncomeClassificationsDocAType
      */
     public function getIncomeClassificationsDoc()
     {
@@ -213,53 +116,19 @@ class RequestedDocAType
     /**
      * Sets a new incomeClassificationsDoc
      *
-     * @param \Sofar\Aade\InvoiceIncomeClassificationType[] $incomeClassificationsDoc
+     * @param \Sofar\Aade\RequestedDoc\RequestedDocAType\IncomeClassificationsDocAType $incomeClassificationsDoc
      * @return self
      */
-    public function setIncomeClassificationsDoc(array $incomeClassificationsDoc = null)
+    public function setIncomeClassificationsDoc(?\Sofar\Aade\RequestedDoc\RequestedDocAType\IncomeClassificationsDocAType $incomeClassificationsDoc = null)
     {
         $this->incomeClassificationsDoc = $incomeClassificationsDoc;
         return $this;
     }
 
     /**
-     * Adds as expensesInvoiceClassification
-     *
-     * @return self
-     * @param \Sofar\Aade\InvoiceExpensesClassificationType $expensesInvoiceClassification
-     */
-    public function addToExpensesClassificationsDoc(\Sofar\Aade\InvoiceExpensesClassificationType $expensesInvoiceClassification)
-    {
-        $this->expensesClassificationsDoc[] = $expensesInvoiceClassification;
-        return $this;
-    }
-
-    /**
-     * isset expensesClassificationsDoc
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetExpensesClassificationsDoc($index)
-    {
-        return isset($this->expensesClassificationsDoc[$index]);
-    }
-
-    /**
-     * unset expensesClassificationsDoc
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetExpensesClassificationsDoc($index)
-    {
-        unset($this->expensesClassificationsDoc[$index]);
-    }
-
-    /**
      * Gets as expensesClassificationsDoc
      *
-     * @return \Sofar\Aade\InvoiceExpensesClassificationType[]
+     * @return \Sofar\Aade\RequestedDoc\RequestedDocAType\ExpensesClassificationsDocAType
      */
     public function getExpensesClassificationsDoc()
     {
@@ -269,12 +138,34 @@ class RequestedDocAType
     /**
      * Sets a new expensesClassificationsDoc
      *
-     * @param \Sofar\Aade\InvoiceExpensesClassificationType[] $expensesClassificationsDoc
+     * @param \Sofar\Aade\RequestedDoc\RequestedDocAType\ExpensesClassificationsDocAType $expensesClassificationsDoc
      * @return self
      */
-    public function setExpensesClassificationsDoc(array $expensesClassificationsDoc = null)
+    public function setExpensesClassificationsDoc(?\Sofar\Aade\RequestedDoc\RequestedDocAType\ExpensesClassificationsDocAType $expensesClassificationsDoc = null)
     {
         $this->expensesClassificationsDoc = $expensesClassificationsDoc;
+        return $this;
+    }
+
+    /**
+     * Gets as paymentMethodsDoc
+     *
+     * @return \Sofar\Aade\RequestedDoc\RequestedDocAType\PaymentMethodsDocAType
+     */
+    public function getPaymentMethodsDoc()
+    {
+        return $this->paymentMethodsDoc;
+    }
+
+    /**
+     * Sets a new paymentMethodsDoc
+     *
+     * @param \Sofar\Aade\RequestedDoc\RequestedDocAType\PaymentMethodsDocAType $paymentMethodsDoc
+     * @return self
+     */
+    public function setPaymentMethodsDoc(?\Sofar\Aade\RequestedDoc\RequestedDocAType\PaymentMethodsDocAType $paymentMethodsDoc = null)
+    {
+        $this->paymentMethodsDoc = $paymentMethodsDoc;
         return $this;
     }
 }

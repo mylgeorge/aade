@@ -1,0 +1,17 @@
+Sofar\Aade\ProviderSignatureType:
+    properties:
+        signingAuthor:
+            -
+                Length:
+                    max: '20'
+                    groups:
+                        - xsd_rules
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+        signature:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules

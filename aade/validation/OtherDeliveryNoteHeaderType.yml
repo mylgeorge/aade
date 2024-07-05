@@ -1,0 +1,38 @@
+Sofar\Aade\OtherDeliveryNoteHeaderType:
+    properties:
+        loadingAddress:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        deliveryAddress:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null
+        startShippingBranch:
+            -
+                GreaterThanOrEqual:
+                    value: '-2147483648'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '2147483647'
+                    groups:
+                        - xsd_rules
+        completeShippingBranch:
+            -
+                GreaterThanOrEqual:
+                    value: '-2147483648'
+                    groups:
+                        - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '2147483647'
+                    groups:
+                        - xsd_rules

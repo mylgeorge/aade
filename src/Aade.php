@@ -36,9 +36,10 @@ final class Aade
         if (is_null(self::$_client)) {
             $aade_url = self::$testing ? self::AADE_URL_DEV : self::AADE_URL_PROD;
             $aade_headers = [
-                'aade-user-id' => self::$aade_user,
+                'aade-user-id'              => self::$aade_user,
                 'Ocp-Apim-Subscription-Key' => self::$aade_key,
-                'Accept-Encoding' => 'gzip'
+                'Accept-Encoding'           => 'gzip',
+                'Content-Type'              => "text/xml"
             ];
             self::$_client = new Client([
                 'base_uri' => $aade_url,

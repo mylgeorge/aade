@@ -1,0 +1,22 @@
+Sofar\Aade\ProviderSignatureType:
+    properties:
+        signingAuthor:
+            expose: true
+            access_type: public_method
+            serialized_name: SigningAuthor
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getSigningAuthor
+                setter: setSigningAuthor
+            type: string
+        signature:
+            expose: true
+            access_type: public_method
+            serialized_name: Signature
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getSignature
+                setter: setSignature
+            type: string

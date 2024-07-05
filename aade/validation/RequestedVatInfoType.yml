@@ -1,0 +1,8 @@
+Sofar\Aade\RequestedVatInfoType:
+    properties:
+        continuationToken:
+            -
+                Valid: null
+        vatInfo:
+            -
+                Valid: null

@@ -1,0 +1,3 @@
+Sofar\Aade\PaymentMethodsDoc:
+    xml_root_name: PaymentMethodsDoc
+    xml_root_namespace: 'https://www.aade.gr/myDATA/paymentMethod/v1.0'

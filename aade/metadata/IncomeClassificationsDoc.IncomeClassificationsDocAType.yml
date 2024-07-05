@@ -9,8 +9,4 @@ Sofar\Aade\IncomeClassificationsDoc\IncomeClassificationsDocAType:
             accessor:
                 getter: getIncomeInvoiceClassification
                 setter: setIncomeInvoiceClassification
-            xml_list:
-                inline: true
-                entry_name: incomeInvoiceClassification
-                namespace: 'https://www.aade.gr/myDATA/incomeClassificaton/v1.0'
-            type: array<Sofar\Aade\InvoiceIncomeClassificationType>
+            type: Sofar\Aade\InvoiceIncomeClassificationType

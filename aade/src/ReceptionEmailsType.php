@@ -13,58 +13,16 @@ class ReceptionEmailsType
     /**
      * Email
      *
-     * @var string[] $email
+     * @var string $email
      */
-    private $email = [
-        
-    ];
-
-    /**
-     * Adds as email
-     *
-     * Email
-     *
-     * @return self
-     * @param string $email
-     */
-    public function addToEmail($email)
-    {
-        $this->email[] = $email;
-        return $this;
-    }
-
-    /**
-     * isset email
-     *
-     * Email
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetEmail($index)
-    {
-        return isset($this->email[$index]);
-    }
-
-    /**
-     * unset email
-     *
-     * Email
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetEmail($index)
-    {
-        unset($this->email[$index]);
-    }
+    private $email = null;
 
     /**
      * Gets as email
      *
      * Email
      *
-     * @return string[]
+     * @return string
      */
     public function getEmail()
     {
@@ -76,10 +34,10 @@ class ReceptionEmailsType
      *
      * Email
      *
-     * @param string[] $email
+     * @param string $email
      * @return self
      */
-    public function setEmail(array $email = null)
+    public function setEmail($email)
     {
         $this->email = $email;
         return $this;

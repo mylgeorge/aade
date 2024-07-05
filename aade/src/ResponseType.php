@@ -18,13 +18,6 @@ class ResponseType
     private $index = null;
 
     /**
-     * QR Code Url
-     *
-     * @var string $qrUrl
-     */
-    private $qrUrl = null;
-
-    /**
      * Αναγνωριστικό οντότητας
      *
      * @var string $invoiceUid
@@ -37,6 +30,13 @@ class ResponseType
      * @var int $invoiceMark
      */
     private $invoiceMark = null;
+
+    /**
+     * QR Code Url
+     *
+     * @var string $qrUrl
+     */
+    private $qrUrl = null;
 
     /**
      * Μοναδικός Αριθμός Παραλαβής Χαρακτηρισμού
@@ -53,6 +53,13 @@ class ResponseType
     private $cancellationMark = null;
 
     /**
+     * Μοναδικός Αριθμός Παραλαβής Τρόπου Πληρωμής
+     *
+     * @var int $paymentMethodMark
+     */
+    private $paymentMethodMark = null;
+
+    /**
      * Συμβολοσειρά Αυθεντικοποίησης Παρόχου
      *
      * @var string $authenticationCode
@@ -62,14 +69,14 @@ class ResponseType
     /**
      * Πάροχοι Λήπτη
      *
-     * @var \Sofar\Aade\ProviderInfoType[] $receptionProviders
+     * @var \Sofar\Aade\ReceptionProvidersType $receptionProviders
      */
     private $receptionProviders = null;
 
     /**
      * Email Παραλαβής
      *
-     * @var string[] $receptionEmails
+     * @var \Sofar\Aade\ReceptionEmailsType $receptionEmails
      */
     private $receptionEmails = null;
 
@@ -110,32 +117,6 @@ class ResponseType
     public function setIndex($index)
     {
         $this->index = $index;
-        return $this;
-    }
-
-    /**
-     * Gets as qrUrl
-     *
-     * QR Code Url
-     *
-     * @return string
-     */
-    public function getQrUrl()
-    {
-        return $this->qrUrl;
-    }
-
-    /**
-     * Sets a new qrUrl
-     *
-     * QR Code Url
-     *
-     * @param string $qrUrl
-     * @return self
-     */
-    public function setQrUrl($qrUrl)
-    {
-        $this->qrUrl = $qrUrl;
         return $this;
     }
 
@@ -192,6 +173,32 @@ class ResponseType
     }
 
     /**
+     * Gets as qrUrl
+     *
+     * QR Code Url
+     *
+     * @return string
+     */
+    public function getQrUrl()
+    {
+        return $this->qrUrl;
+    }
+
+    /**
+     * Sets a new qrUrl
+     *
+     * QR Code Url
+     *
+     * @param string $qrUrl
+     * @return self
+     */
+    public function setQrUrl($qrUrl)
+    {
+        $this->qrUrl = $qrUrl;
+        return $this;
+    }
+
+    /**
      * Gets as classificationMark
      *
      * Μοναδικός Αριθμός Παραλαβής Χαρακτηρισμού
@@ -244,6 +251,32 @@ class ResponseType
     }
 
     /**
+     * Gets as paymentMethodMark
+     *
+     * Μοναδικός Αριθμός Παραλαβής Τρόπου Πληρωμής
+     *
+     * @return int
+     */
+    public function getPaymentMethodMark()
+    {
+        return $this->paymentMethodMark;
+    }
+
+    /**
+     * Sets a new paymentMethodMark
+     *
+     * Μοναδικός Αριθμός Παραλαβής Τρόπου Πληρωμής
+     *
+     * @param int $paymentMethodMark
+     * @return self
+     */
+    public function setPaymentMethodMark($paymentMethodMark)
+    {
+        $this->paymentMethodMark = $paymentMethodMark;
+        return $this;
+    }
+
+    /**
      * Gets as authenticationCode
      *
      * Συμβολοσειρά Αυθεντικοποίησης Παρόχου
@@ -270,51 +303,11 @@ class ResponseType
     }
 
     /**
-     * Adds as providerInfo
-     *
-     * Πάροχοι Λήπτη
-     *
-     * @return self
-     * @param \Sofar\Aade\ProviderInfoType $providerInfo
-     */
-    public function addToReceptionProviders(\Sofar\Aade\ProviderInfoType $providerInfo)
-    {
-        $this->receptionProviders[] = $providerInfo;
-        return $this;
-    }
-
-    /**
-     * isset receptionProviders
-     *
-     * Πάροχοι Λήπτη
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetReceptionProviders($index)
-    {
-        return isset($this->receptionProviders[$index]);
-    }
-
-    /**
-     * unset receptionProviders
-     *
-     * Πάροχοι Λήπτη
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetReceptionProviders($index)
-    {
-        unset($this->receptionProviders[$index]);
-    }
-
-    /**
      * Gets as receptionProviders
      *
      * Πάροχοι Λήπτη
      *
-     * @return \Sofar\Aade\ProviderInfoType[]
+     * @return \Sofar\Aade\ReceptionProvidersType
      */
     public function getReceptionProviders()
     {
@@ -326,53 +319,13 @@ class ResponseType
      *
      * Πάροχοι Λήπτη
      *
-     * @param \Sofar\Aade\ProviderInfoType[] $receptionProviders
+     * @param \Sofar\Aade\ReceptionProvidersType $receptionProviders
      * @return self
      */
-    public function setReceptionProviders(array $receptionProviders = null)
+    public function setReceptionProviders(?\Sofar\Aade\ReceptionProvidersType $receptionProviders = null)
     {
         $this->receptionProviders = $receptionProviders;
         return $this;
-    }
-
-    /**
-     * Adds as email
-     *
-     * Email Παραλαβής
-     *
-     * @return self
-     * @param string $email
-     */
-    public function addToReceptionEmails($email)
-    {
-        $this->receptionEmails[] = $email;
-        return $this;
-    }
-
-    /**
-     * isset receptionEmails
-     *
-     * Email Παραλαβής
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetReceptionEmails($index)
-    {
-        return isset($this->receptionEmails[$index]);
-    }
-
-    /**
-     * unset receptionEmails
-     *
-     * Email Παραλαβής
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetReceptionEmails($index)
-    {
-        unset($this->receptionEmails[$index]);
     }
 
     /**
@@ -380,7 +333,7 @@ class ResponseType
      *
      * Email Παραλαβής
      *
-     * @return string[]
+     * @return \Sofar\Aade\ReceptionEmailsType
      */
     public function getReceptionEmails()
     {
@@ -392,10 +345,10 @@ class ResponseType
      *
      * Email Παραλαβής
      *
-     * @param string[] $receptionEmails
+     * @param \Sofar\Aade\ReceptionEmailsType $receptionEmails
      * @return self
      */
-    public function setReceptionEmails(array $receptionEmails = null)
+    public function setReceptionEmails(?\Sofar\Aade\ReceptionEmailsType $receptionEmails = null)
     {
         $this->receptionEmails = $receptionEmails;
         return $this;

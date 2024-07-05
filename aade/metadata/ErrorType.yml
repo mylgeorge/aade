@@ -15,4 +15,4 @@ Sofar\Aade\ErrorType:
             accessor:
                 getter: getCode
                 setter: setCode
-            type: int
+            type: string

@@ -1,0 +1,26 @@
+Sofar\Aade\RequestedVatInfoType:
+    properties:
+        continuationToken:
+            expose: true
+            access_type: public_method
+            serialized_name: continuationToken
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getContinuationToken
+                setter: setContinuationToken
+            type: Sofar\Aade\ContinuationTokenType
+        vatInfo:
+            expose: true
+            access_type: public_method
+            serialized_name: VatInfo
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatInfo
+                setter: setVatInfo
+            xml_list:
+                inline: true
+                entry_name: VatInfo
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<Sofar\Aade\InvoiceVatDetailType>

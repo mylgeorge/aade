@@ -43,11 +43,11 @@ Sofar\Aade\InvoiceExpensesClassificationType:
         classificationPostMode:
             -
                 GreaterThanOrEqual:
-                    value: '1'
+                    value: '0'
                     groups:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '2'
+                    value: '1'
                     groups:
                         - xsd_rules

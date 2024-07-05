@@ -13,56 +13,16 @@ class ReceptionProvidersType
     /**
      * Πληροφορίες Παρόχου
      *
-     * @var string[] $providerInfo
+     * @var \Sofar\Aade\ProviderInfoType $providerInfo
      */
     private $providerInfo = null;
-
-    /**
-     * Adds as vATNumber
-     *
-     * Πληροφορίες Παρόχου
-     *
-     * @return self
-     * @param string $vATNumber
-     */
-    public function addToProviderInfo($vATNumber)
-    {
-        $this->providerInfo[] = $vATNumber;
-        return $this;
-    }
-
-    /**
-     * isset providerInfo
-     *
-     * Πληροφορίες Παρόχου
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetProviderInfo($index)
-    {
-        return isset($this->providerInfo[$index]);
-    }
-
-    /**
-     * unset providerInfo
-     *
-     * Πληροφορίες Παρόχου
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetProviderInfo($index)
-    {
-        unset($this->providerInfo[$index]);
-    }
 
     /**
      * Gets as providerInfo
      *
      * Πληροφορίες Παρόχου
      *
-     * @return string[]
+     * @return \Sofar\Aade\ProviderInfoType
      */
     public function getProviderInfo()
     {
@@ -74,10 +34,10 @@ class ReceptionProvidersType
      *
      * Πληροφορίες Παρόχου
      *
-     * @param string[] $providerInfo
+     * @param \Sofar\Aade\ProviderInfoType $providerInfo
      * @return self
      */
-    public function setProviderInfo(array $providerInfo = null)
+    public function setProviderInfo(?\Sofar\Aade\ProviderInfoType $providerInfo = null)
     {
         $this->providerInfo = $providerInfo;
         return $this;

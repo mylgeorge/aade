@@ -1,0 +1,9 @@
+Sofar\Aade\PaymentMethodsDoc\PaymentMethodsDocAType:
+    properties:
+        paymentMethods:
+            -
+                NotNull:
+                    groups:
+                        - xsd_rules
+            -
+                Valid: null

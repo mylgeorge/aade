@@ -1,0 +1,392 @@
+Sofar\Aade\InvoiceVatDetailType:
+    properties:
+        mark:
+            expose: true
+            access_type: public_method
+            serialized_name: Mark
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getMark
+                setter: setMark
+            type: string
+        isCancelled:
+            expose: true
+            access_type: public_method
+            serialized_name: IsCancelled
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIsCancelled
+                setter: setIsCancelled
+            type: bool
+        issueDate:
+            expose: true
+            access_type: public_method
+            serialized_name: IssueDate
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIssueDate
+                setter: setIssueDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        vat301:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat301
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat301
+                setter: setVat301
+            type: float
+        vat302:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat302
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat302
+                setter: setVat302
+            type: float
+        vat303:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat303
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat303
+                setter: setVat303
+            type: float
+        vat304:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat304
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat304
+                setter: setVat304
+            type: float
+        vat305:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat305
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat305
+                setter: setVat305
+            type: float
+        vat306:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat306
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat306
+                setter: setVat306
+            type: float
+        vat331:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat331
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat331
+                setter: setVat331
+            type: float
+        vat332:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat332
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat332
+                setter: setVat332
+            type: float
+        vat333:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat333
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat333
+                setter: setVat333
+            type: float
+        vat334:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat334
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat334
+                setter: setVat334
+            type: float
+        vat335:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat335
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat335
+                setter: setVat335
+            type: float
+        vat336:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat336
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat336
+                setter: setVat336
+            type: float
+        vat361:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat361
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat361
+                setter: setVat361
+            type: float
+        vat362:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat362
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat362
+                setter: setVat362
+            type: float
+        vat363:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat363
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat363
+                setter: setVat363
+            type: float
+        vat364:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat364
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat364
+                setter: setVat364
+            type: float
+        vat365:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat365
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat365
+                setter: setVat365
+            type: float
+        vat366:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat366
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat366
+                setter: setVat366
+            type: float
+        vat381:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat381
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat381
+                setter: setVat381
+            type: float
+        vat382:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat382
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat382
+                setter: setVat382
+            type: float
+        vat383:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat383
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat383
+                setter: setVat383
+            type: float
+        vat384:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat384
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat384
+                setter: setVat384
+            type: float
+        vat385:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat385
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat385
+                setter: setVat385
+            type: float
+        vat386:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat386
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat386
+                setter: setVat386
+            type: float
+        vat342:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat342
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat342
+                setter: setVat342
+            type: float
+        vat345:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat345
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat345
+                setter: setVat345
+            type: float
+        vat348:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat348
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat348
+                setter: setVat348
+            type: float
+        vat349:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat349
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat349
+                setter: setVat349
+            type: float
+        vat310:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat310
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat310
+                setter: setVat310
+            type: float
+        vat402:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat402
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat402
+                setter: setVat402
+            type: float
+        vat407:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat407
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat407
+                setter: setVat407
+            type: float
+        vat411:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat411
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat411
+                setter: setVat411
+            type: float
+        vat423:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat423
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat423
+                setter: setVat423
+            type: float
+        vat422:
+            expose: true
+            access_type: public_method
+            serialized_name: Vat422
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVat422
+                setter: setVat422
+            type: float
+        vatUnclassified361:
+            expose: true
+            access_type: public_method
+            serialized_name: VatUnclassified361
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatUnclassified361
+                setter: setVatUnclassified361
+            type: float
+        vatUnclassified381:
+            expose: true
+            access_type: public_method
+            serialized_name: VatUnclassified381
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getVatUnclassified381
+                setter: setVatUnclassified381
+            type: float

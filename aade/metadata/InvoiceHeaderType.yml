@@ -178,3 +178,77 @@ Sofar\Aade\InvoiceHeaderType:
                 entry_name: otherCorrelatedEntities
                 namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
             type: array<Sofar\Aade\EntityType>
+        otherDeliveryNoteHeader:
+            expose: true
+            access_type: public_method
+            serialized_name: otherDeliveryNoteHeader
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getOtherDeliveryNoteHeader
+                setter: setOtherDeliveryNoteHeader
+            type: Sofar\Aade\OtherDeliveryNoteHeaderType
+        isDeliveryNote:
+            expose: true
+            access_type: public_method
+            serialized_name: isDeliveryNote
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getIsDeliveryNote
+                setter: setIsDeliveryNote
+            type: bool
+        otherMovePurposeTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: otherMovePurposeTitle
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getOtherMovePurposeTitle
+                setter: setOtherMovePurposeTitle
+            type: string
+        thirdPartyCollection:
+            expose: true
+            access_type: public_method
+            serialized_name: thirdPartyCollection
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getThirdPartyCollection
+                setter: setThirdPartyCollection
+            type: bool
+        multipleConnectedMarks:
+            expose: true
+            access_type: public_method
+            serialized_name: multipleConnectedMarks
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getMultipleConnectedMarks
+                setter: setMultipleConnectedMarks
+            xml_list:
+                inline: true
+                entry_name: multipleConnectedMarks
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            type: array<int>
+        tableAA:
+            expose: true
+            access_type: public_method
+            serialized_name: tableAA
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTableAA
+                setter: setTableAA
+            type: string
+        totalCancelDeliveryOrders:
+            expose: true
+            access_type: public_method
+            serialized_name: totalCancelDeliveryOrders
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTotalCancelDeliveryOrders
+                setter: setTotalCancelDeliveryOrders
+            type: bool

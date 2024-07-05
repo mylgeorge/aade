@@ -30,6 +30,7 @@ class Invoice
         'paymentMethods' => ['\Sofar\Aade\PaymentMethodDetailType'],
         'incomeClassification' => ['\Sofar\Aade\IncomeClassificationType'],
         'taxesTotals' => ['\Sofar\Aade\TaxTotalsType'],
+        'correlatedInvoices' => []
     ];
 
     public static $defaultClassificationCategory = 'category1_2';
@@ -43,12 +44,37 @@ class Invoice
      * 
      * @return AadeBookInvoiceType[]
      */
-    public function get()
+    public function get(array $query = []) : array
     {
         $extra = [];
         $defaults = ['mark' => 0];
         $response = Aade::Client()->request('GET', 'RequestTransmittedDocs', [
-            'query' => $this->query->wheres + $defaults
+            'query' => $query + $this->query->wheres + $defaults
+        ]);
+
+        $report = Serializer::deserialize($response->getBody()->getContents(), 'Sofar\Aade\RequestedDoc');
+
+        $cursor = $report->getContinuationToken();
+        if (!is_null($cursor)) {
+            $extra = $this->where([
+                'nextPartitionKey' => $cursor->getNextPartitionKey(),
+                'nextRowKey' => $cursor->getNextRowKey(),
+            ])->get();
+        }
+
+        return [...$report->getInvoicesDoc(), ...$extra];
+    }
+
+    /**
+     * 
+     * @return AadeBookInvoiceType[]
+     */
+    public function getRequestDocs(array $query = []) : array
+    {
+        $extra = [];
+        $defaults = ['mark' => 0];
+        $response = Aade::Client()->request('GET', 'RequestDocs', [
+            'query' => $query + $this->query->wheres + $defaults
         ]);
 
         $report = Serializer::deserialize($response->getBody()->getContents(), 'Sofar\Aade\RequestedDoc');
@@ -79,7 +105,7 @@ class Invoice
         return $report->getResponse();
     }
 
-    protected function cancel($mark)
+    public static function cancel($mark)
     {
         $response = Aade::Client()->request('POST', 'CancelInvoice', ['query' => compact('mark')]);
 
@@ -262,9 +288,14 @@ class Invoice
             if (is_array($class)) {
                 $class = reset($class);
                 foreach ($properties as $k => $v) {
-                    $obj = new $class;
-                    $this->make($v, $obj);
-                    $parent->{'addTo' . ucfirst($part)}(clone $obj);
+                    if($class){
+                        $obj = new $class;
+                        $this->make($v, $obj);
+                        $parent->{'addTo' . ucfirst($part)}(clone $obj);
+                    }
+                    else {
+                        $parent->{'addTo' . ucfirst($part)}($v);
+                    }
                 }
             } else if (is_array($properties)) {
                 $obj = $parent->{'get' . ucfirst($part)}();

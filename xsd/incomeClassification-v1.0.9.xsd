@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:icls="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" targetNamespace="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.7">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:icls="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" targetNamespace="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.9">
   <xs:element name="IncomeClassificationsDoc">
     <xs:annotation>
       <xs:documentation>Χαρατηρισμοί Εσόδων Πρότυπων Παραστατικών ΑΑΔΕ</xs:documentation>
@@ -132,6 +132,7 @@
       <xs:enumeration value="category1_9"/>
       <xs:enumeration value="category1_10"/>
       <xs:enumeration value="category1_95"/>
+	  <xs:enumeration value="category3"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="AmountType">

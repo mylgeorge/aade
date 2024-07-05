@@ -8,50 +8,14 @@ namespace Sofar\Aade\ResponseDoc;
 class ResponseDocAType
 {
     /**
-     * @var \Sofar\Aade\ResponseType[] $response
+     * @var \Sofar\Aade\ResponseType $response
      */
-    private $response = [
-        
-    ];
-
-    /**
-     * Adds as response
-     *
-     * @return self
-     * @param \Sofar\Aade\ResponseType $response
-     */
-    public function addToResponse(\Sofar\Aade\ResponseType $response)
-    {
-        $this->response[] = $response;
-        return $this;
-    }
-
-    /**
-     * isset response
-     *
-     * @param int|string $index
-     * @return bool
-     */
-    public function issetResponse($index)
-    {
-        return isset($this->response[$index]);
-    }
-
-    /**
-     * unset response
-     *
-     * @param int|string $index
-     * @return void
-     */
-    public function unsetResponse($index)
-    {
-        unset($this->response[$index]);
-    }
+    private $response = null;
 
     /**
      * Gets as response
      *
-     * @return \Sofar\Aade\ResponseType[]
+     * @return \Sofar\Aade\ResponseType
      */
     public function getResponse()
     {
@@ -61,10 +25,10 @@ class ResponseDocAType
     /**
      * Sets a new response
      *
-     * @param \Sofar\Aade\ResponseType[] $response
+     * @param \Sofar\Aade\ResponseType $response
      * @return self
      */
-    public function setResponse(array $response)
+    public function setResponse(\Sofar\Aade\ResponseType $response)
     {
         $this->response = $response;
         return $this;

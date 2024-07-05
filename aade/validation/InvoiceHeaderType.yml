@@ -49,6 +49,10 @@ Sofar\Aade\InvoiceHeaderType:
                         - '7.1'
                         - '8.1'
                         - '8.2'
+                        - '8.4'
+                        - '8.5'
+                        - '8.6'
+                        - '9.3'
                         - '11.1'
                         - '11.2'
                         - '11.3'
@@ -291,7 +295,7 @@ Sofar\Aade\InvoiceHeaderType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '8'
+                    value: '19'
                     groups:
                         - xsd_rules
         specialInvoiceCategory:
@@ -302,7 +306,7 @@ Sofar\Aade\InvoiceHeaderType:
                         - xsd_rules
             -
                 LessThanOrEqual:
-                    value: '10'
+                    value: '12'
                     groups:
                         - xsd_rules
         invoiceVariationType:
@@ -319,3 +323,30 @@ Sofar\Aade\InvoiceHeaderType:
         otherCorrelatedEntities:
             -
                 Valid: null
+        otherDeliveryNoteHeader:
+            -
+                Valid: null
+        otherMovePurposeTitle:
+            -
+                Length:
+                    max: '150'
+                    groups:
+                        - xsd_rules
+        multipleConnectedMarks:
+            -
+                All:
+                    constraints:
+                        -
+                            GreaterThanOrEqual:
+                                value: '-9223372036854775808'
+                        -
+                            LessThanOrEqual:
+                                value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+        tableAA:
+            -
+                Length:
+                    max: '50'
+                    groups:
+                        - xsd_rules

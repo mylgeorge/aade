@@ -20,6 +20,26 @@ Sofar\Aade\InvoiceRowType:
                 getter: getRecType
                 setter: setRecType
             type: int
+        taricNo:
+            expose: true
+            access_type: public_method
+            serialized_name: TaricNo
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getTaricNo
+                setter: setTaricNo
+            type: string
+        itemCode:
+            expose: true
+            access_type: public_method
+            serialized_name: itemCode
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getItemCode
+                setter: setItemCode
+            type: string
         itemDescr:
             expose: true
             access_type: public_method
@@ -268,3 +288,33 @@ Sofar\Aade\InvoiceRowType:
                 getter: getQuantity15
                 setter: setQuantity15
             type: float
+        otherMeasurementUnitQuantity:
+            expose: true
+            access_type: public_method
+            serialized_name: otherMeasurementUnitQuantity
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getOtherMeasurementUnitQuantity
+                setter: setOtherMeasurementUnitQuantity
+            type: int
+        otherMeasurementUnitTitle:
+            expose: true
+            access_type: public_method
+            serialized_name: otherMeasurementUnitTitle
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getOtherMeasurementUnitTitle
+                setter: setOtherMeasurementUnitTitle
+            type: string
+        notVAT195:
+            expose: true
+            access_type: public_method
+            serialized_name: notVAT195
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getNotVAT195
+                setter: setNotVAT195
+            type: bool

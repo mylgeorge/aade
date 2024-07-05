@@ -1,0 +1,3 @@
+Sofar\Aade\RequestedVatInfo:
+    xml_root_name: RequestedVatInfo
+    xml_root_namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'

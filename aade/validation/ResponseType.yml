@@ -44,20 +44,21 @@ Sofar\Aade\ResponseType:
                     value: '9223372036854775807'
                     groups:
                         - xsd_rules
-        receptionProviders:
+        paymentMethodMark:
             -
-                Count:
-                    max: 2
+                GreaterThanOrEqual:
+                    value: '-9223372036854775808'
                     groups:
                         - xsd_rules
+            -
+                LessThanOrEqual:
+                    value: '9223372036854775807'
+                    groups:
+                        - xsd_rules
+        receptionProviders:
             -
                 Valid: null
         receptionEmails:
-            -
-                Count:
-                    max: 2
-                    groups:
-                        - xsd_rules
             -
                 Valid: null
         errors:

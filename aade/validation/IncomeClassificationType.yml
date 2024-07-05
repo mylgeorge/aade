@@ -55,6 +55,7 @@ Sofar\Aade\IncomeClassificationType:
                         - category1_9
                         - category1_10
                         - category1_95
+                        - category3
                     groups:
                         - xsd_rules
             -

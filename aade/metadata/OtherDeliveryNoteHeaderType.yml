@@ -1,0 +1,42 @@
+Sofar\Aade\OtherDeliveryNoteHeaderType:
+    properties:
+        loadingAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: loadingAddress
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getLoadingAddress
+                setter: setLoadingAddress
+            type: Sofar\Aade\AddressType
+        deliveryAddress:
+            expose: true
+            access_type: public_method
+            serialized_name: deliveryAddress
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getDeliveryAddress
+                setter: setDeliveryAddress
+            type: Sofar\Aade\AddressType
+        startShippingBranch:
+            expose: true
+            access_type: public_method
+            serialized_name: startShippingBranch
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getStartShippingBranch
+                setter: setStartShippingBranch
+            type: int
+        completeShippingBranch:
+            expose: true
+            access_type: public_method
+            serialized_name: completeShippingBranch
+            xml_element:
+                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
+            accessor:
+                getter: getCompleteShippingBranch
+                setter: setCompleteShippingBranch
+            type: int

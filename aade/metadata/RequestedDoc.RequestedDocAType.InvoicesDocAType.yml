@@ -9,8 +9,4 @@ Sofar\Aade\RequestedDoc\RequestedDocAType\InvoicesDocAType:
             accessor:
                 getter: getInvoice
                 setter: setInvoice
-            xml_list:
-                inline: true
-                entry_name: invoice
-                namespace: 'http://www.aade.gr/myDATA/invoice/v1.0'
-            type: array<Sofar\Aade\AadeBookInvoiceType>
+            type: Sofar\Aade\AadeBookInvoiceType
